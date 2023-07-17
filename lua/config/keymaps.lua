@@ -7,10 +7,10 @@ vim.keymap.set("n", "<leader>b", "<C-w>s", opt)
 vim.keymap.set("n", "<leader>v", "<C-w>v", opt)
 
 -- switch window
--- vim.keymap.set("n", "<C-h>", "<C-w>h", opt)
--- vim.keymap.set("n", "<C-j>", "<C-w>j", opt)
--- vim.keymap.set("n", "<C-k>", "<C-w>k", opt)
--- vim.keymap.set("n", "<C-l>", "<C-w>l", opt)
+vim.keymap.set("n", "<C-h>", "<C-w>h", opt)
+vim.keymap.set("n", "<C-j>", "<C-w>j", opt)
+vim.keymap.set("n", "<C-k>", "<C-w>k", opt)
+vim.keymap.set("n", "<C-l>", "<C-w>l", opt)
 
 -- exit insert with jk
 vim.keymap.set("i", "jk", "<esc>", opt)

@@ -20,8 +20,10 @@ return {
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		local lspconfig = require("lspconfig")
+
 		require("mason-lspconfig").setup()
 		require("config.lsp.lua").setup(lspconfig, capabilities)
 		require("config.lsp.c").setup(lspconfig, capabilities)
+		-- require("config.lsp.rust").setup(lspconfig, capabilities)
 	end,
 }
