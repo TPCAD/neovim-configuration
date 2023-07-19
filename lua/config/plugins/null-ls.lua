@@ -1,6 +1,6 @@
 return {
   "jose-elias-alvarez/null-ls.nvim",
-  event = "VeryLazy",
+  event = "BufRead",
   config = function()
     local null_ls = require("null-ls")
 
@@ -8,8 +8,14 @@ return {
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.black,
+
+        -- c/cpp formater
+        null_ls.builtins.formatting.clang_format,
+
+        -- c/cpp linter
+        -- null_ls.builtins.diagnostics.cpplint,
       },
+      -- auto format on save
       on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
           vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })

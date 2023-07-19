@@ -20,6 +20,9 @@ vim.keymap.set("n", "<space>", ":", opt)
 vim.keymap.set("n", "j", [[v:count ? 'j' : 'gj']], { noremap = true, expr = true })
 vim.keymap.set("n", "k", [[v:count ? 'k' : 'gk']], { noremap = true, expr = true })
 
+-- buffer
+vim.keymap.set("n", "<leader>x", ":bd<CR>", opt)
+
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
