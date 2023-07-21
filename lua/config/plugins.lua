@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- colorscheme
 	require("config.plugins.colorscheme"),
+	-- alpha
+	require("config.plugins.alpha"),
 	-- telescope
 	require("config.plugins.telescope"),
 	-- lualine
