@@ -1,0 +1,13 @@
+{
+	"return-table": {
+		"prefix": "loct",
+		"body": [
+			"local M = {}\n",
+			"M.${1:tableName} = {\n",
+			"${2:content}\n",
+			"}\n",
+			"return M$0"
+		],
+		"description": "Create and return a table"
+	}
+}

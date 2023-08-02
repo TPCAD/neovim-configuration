@@ -51,4 +51,7 @@ require("lazy").setup({
 	require("config.plugins.better-escape"),
 	-- indent-blankline
 	require("config.plugins.indent-blankline"),
+	-- yuck
+	require("config.plugins.yuck").yuck,
+	require("config.plugins.yuck").parinfer,
 })

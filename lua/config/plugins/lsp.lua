@@ -19,6 +19,7 @@ return {
 		local servers = {
 			"lua",
 			"c",
+			"python",
 		}
 
 		local on_attach = require("config.utils.lsp-on-attach")
