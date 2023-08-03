@@ -54,4 +54,6 @@ require("lazy").setup({
 	-- yuck
 	require("config.plugins.yuck").yuck,
 	require("config.plugins.yuck").parinfer,
+	-- markdown preview
+	require("config.plugins.markdown-preview"),
 })
