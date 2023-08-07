@@ -23,6 +23,9 @@ vim.keymap.set("n", "k", [[v:count ? 'k' : 'gk']], { noremap = true, expr = true
 -- delete buffer
 vim.keymap.set("n", "<leader>x", ":bd<CR>", opt)
 
+-- termial mode
+vim.keymap.set("t", "<leader>jk", "<C-\\><C-n>", opt)
+
 -- Diagnostic keymap
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
