@@ -10,6 +10,12 @@
                     "lua"
                 ],
                 "path": "./lua.json"
+            },
+	    {
+                "language": [
+                    "cpp"
+                ],
+                "path": "./cpp.json"
             }
         ]
     }

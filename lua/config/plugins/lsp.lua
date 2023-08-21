@@ -10,6 +10,7 @@ return {
 		{
 			"williamboman/mason.nvim",
 			build = ":MasonUpdate", -- :MasonUpdate updates registry contents event = "VeryLazy",
+			event = "VeryLazy",
 			config = function()
 				require("mason").setup()
 			end,
@@ -20,6 +21,7 @@ return {
 			"lua",
 			"c",
 			"python",
+			"cmake",
 		}
 
 		local on_attach = require("config.utils.lsp-on-attach")
