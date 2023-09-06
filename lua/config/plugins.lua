@@ -56,4 +56,8 @@ require("lazy").setup({
 	require("config.plugins.yuck").parinfer,
 	-- markdown preview
 	require("config.plugins.markdown-preview"),
+	-- cursor word highlight
+	require("config.plugins.local-highlight"),
+	-- surround
+	require("config.plugins.surround"),
 })

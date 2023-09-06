@@ -8,7 +8,7 @@ return {
 	},
 	config = function()
 		vim.g.mkdp_auto_close = 0
-		vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
+		-- vim.g.mkdp_browserfunc = "OpenMarkdownPreview"
 		vim.g.mkdp_refresh_slow = 0
 		vim.cmd([[
       function OpenMarkdownPreview (url)

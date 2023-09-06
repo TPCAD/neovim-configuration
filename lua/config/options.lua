@@ -3,6 +3,7 @@ set.number = true
 set.relativenumber = true
 set.clipboard = "unnamed"
 set.mouse = "a"
+set.updatetime = 500
 
 vim.opt.list = true
 -- vim.opt.listchars:append("eol:↴")
