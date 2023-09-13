@@ -9,6 +9,7 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.black,
 
 				-- c/cpp formater
 				null_ls.builtins.formatting.clang_format,
