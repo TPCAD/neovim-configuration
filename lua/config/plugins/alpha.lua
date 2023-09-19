@@ -4,11 +4,27 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local dashboard = require("alpha.themes.dashboard")
+		-- dashboard.section.header.val = {
+		-- 	[[  ／|_       ]],
+		-- 	[[ (o o /      ]],
+		-- 	[[  |.   ~.    ]],
+		-- 	[[  じしf_,)ノ ]],
+		-- }
 		dashboard.section.header.val = {
-			[[  ／|_       ]],
-			[[ (o o /      ]],
-			[[  |.   ~.    ]],
-			[[  じしf_,)ノ ]],
+			[[                  //       ]],
+			[[     \\          //        ]],
+			[[      \\        //         ]],
+			[[##DDDDDDDDDDDDDDDDDDDDDD## ]],
+			[[## DDDDDDDDDDDDDDDDDDDD ## ]],
+			[[## hh                hh ## ]],
+			[[## hh    //   \\     hh ## ]],
+			[[## hh   //     \\    hh ## ]],
+			[[## hh                hh ## ]],
+			[[## hh      wwww      hh ## ]],
+			[[## hh                hh ## ]],
+			[[## MMMMMMMMMMMMMMMMMMMM ## ]],
+			[[##MMMMMMMMMMMMMMMMMMMMMM## ]],
+			[[     \/            \/      ]],
 		}
 
 		dashboard.section.buttons.val = {
