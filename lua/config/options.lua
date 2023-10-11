@@ -4,6 +4,7 @@ set.relativenumber = true
 set.clipboard = "unnamed"
 set.mouse = "a"
 set.updatetime = 500
+set.colorcolumn = "80"
 
 vim.opt.list = true
 -- vim.opt.listchars:append("eol:↴")
@@ -24,13 +25,11 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 
 -- ignore case when type ":" to enter command mode
 local cmdline_smartcase = vim.api.nvim_create_augroup("cmdline_smartcase", { clear = true })
-
 vim.api.nvim_create_autocmd({ "CmdlineEnter" }, {
 	pattern = ":",
 	group = cmdline_smartcase,
 	command = "set ignorecase",
 })
-
 vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
 	pattern = ":",
 	group = cmdline_smartcase,
