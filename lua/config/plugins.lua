@@ -40,7 +40,8 @@ require("lazy").setup({
 	-- treesitter
 	require("config.plugins.tree-sitter"),
 	-- rust
-	require("config.plugins.rust"),
+	require("config.plugins.rust").rust,
+	require("config.plugins.rust").rust_tools,
 	-- toggleterm
 	require("config.plugins.toggleterm"),
 	-- which-key
