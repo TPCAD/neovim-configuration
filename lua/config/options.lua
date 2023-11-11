@@ -5,6 +5,7 @@ set.clipboard = "unnamed"
 set.mouse = "a"
 set.updatetime = 500
 set.colorcolumn = "80"
+set.exrc = true
 
 vim.opt.list = true
 -- vim.opt.listchars:append("eol:↴")

@@ -17,6 +17,8 @@ require("lazy").setup({
   require("config.plugins.colorscheme"),
   -- alpha
   require("config.plugins.alpha"),
+  -- cellular-automaton
+  require("config.plugins.cellular-automaton"),
   -- telescope
   require("config.plugins.telescope"),
   -- lualine
@@ -33,6 +35,8 @@ require("lazy").setup({
   require("config.plugins.autopairs"),
   -- LSP
   require("config.plugins.lsp"),
+  -- DAP
+  -- require("config.plugins.dap"),
   -- cmp
   require("config.plugins.cmp"),
   -- null-ls
