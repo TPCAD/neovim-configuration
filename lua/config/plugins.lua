@@ -13,26 +13,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- colorscheme
-  require("config.plugins.colorscheme"),
+  -- ui
   -- alpha
   require("config.plugins.alpha"),
-  -- cellular-automaton
-  require("config.plugins.cellular-automaton"),
-  -- telescope
-  require("config.plugins.telescope"),
+  -- colorscheme
+  require("config.plugins.colorscheme"),
   -- lualine
   require("config.plugins.lualine"),
   -- bufferline
   require("config.plugins.bufferline"),
-  -- nvim-tree
-  require("config.plugins.nvim-tree"),
-  -- neodev
-  require("config.plugins.neodev"),
-  -- comment
-  require("config.plugins.comment"),
-  -- auto pairs
-  require("config.plugins.autopairs"),
+
+  -- lsp
   -- LSP
   require("config.plugins.lsp"),
   -- DAP
@@ -41,28 +32,46 @@ require("lazy").setup({
   require("config.plugins.cmp"),
   -- null-ls
   require("config.plugins.null-ls"),
+  -- comment
+  require("config.plugins.comment"),
   -- treesitter
   require("config.plugins.tree-sitter"),
+  -- neodev
+  require("config.plugins.neodev"),
+  -- markdown preview
+  require("config.plugins.markdown-preview"),
   -- rust
   require("config.plugins.rust").rust,
   require("config.plugins.rust").rust_tools,
+  -- yuck
+  require("config.plugins.yuck").yuck,
+  require("config.plugins.yuck").parinfer,
+
+  -- functional
+  -- telescope
+  require("config.plugins.telescope"),
   -- toggleterm
   require("config.plugins.toggleterm"),
+  -- nvim-tree
+  require("config.plugins.nvim-tree"),
+
+  -- convenient
+  -- auto pairs
+  require("config.plugins.autopairs"),
   -- which-key
   require("config.plugins.which-key"),
   -- flash
   require("config.plugins.flash"),
+  -- surround
+  require("config.plugins.surround"),
   -- better escape
   require("config.plugins.better-escape"),
   -- indent-blankline
   require("config.plugins.indent-blankline"),
-  -- yuck
-  require("config.plugins.yuck").yuck,
-  require("config.plugins.yuck").parinfer,
-  -- markdown preview
-  require("config.plugins.markdown-preview"),
   -- cursor word highlight
   require("config.plugins.local-highlight"),
-  -- surround
-  require("config.plugins.surround"),
+
+  -- funny
+  -- cellular-automaton
+  require("config.plugins.cellular-automaton"),
 })
