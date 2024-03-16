@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- ui
   -- alpha
-  require("config.plugins.alpha"),
+  -- require("config.plugins.alpha"),
   -- colorscheme
   require("config.plugins.colorscheme"),
   -- lualine
