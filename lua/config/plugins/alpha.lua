@@ -10,22 +10,6 @@ return {
       [[  |.   ~.    ]],
       [[  じしf_,)ノ ]],
     }
-    -- dashboard.section.header.val = {
-    -- 	[[                  //       ]],
-    -- 	[[     \\          //        ]],
-    -- 	[[      \\        //         ]],
-    -- 	[[##DDDDDDDDDDDDDDDDDDDDDD## ]],
-    -- 	[[## DDDDDDDDDDDDDDDDDDDD ## ]],
-    -- 	[[## hh                hh ## ]],
-    -- 	[[## hh    //   \\     hh ## ]],
-    -- 	[[## hh   //     \\    hh ## ]],
-    -- 	[[## hh                hh ## ]],
-    -- 	[[## hh      wwww      hh ## ]],
-    -- 	[[## hh                hh ## ]],
-    -- 	[[## MMMMMMMMMMMMMMMMMMMM ## ]],
-    -- 	[[##MMMMMMMMMMMMMMMMMMMMMM## ]],
-    -- 	[[     \/            \/      ]],
-    -- }
 
     dashboard.section.buttons.val = {
       dashboard.button("LDR e", "  File Explorer", "<leader>e"),
