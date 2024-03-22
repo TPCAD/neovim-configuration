@@ -6,6 +6,7 @@ set.mouse = "a"
 set.updatetime = 500
 set.colorcolumn = "80"
 set.exrc = true
+set.termguicolors = true
 
 vim.opt.list = true
 -- vim.opt.listchars:append("eol:↴")
