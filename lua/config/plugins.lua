@@ -55,6 +55,9 @@ require("lazy").setup({
   -- nvim-tree
   require("config.plugins.nvim-tree"),
 
+  -- session
+  require("config.plugins.persistence"),
+
   -- convenient
   -- auto pairs
   require("config.plugins.autopairs"),
