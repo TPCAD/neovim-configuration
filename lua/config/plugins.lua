@@ -31,7 +31,8 @@ require("lazy").setup({
   -- cmp
   require("config.plugins.cmp"),
   -- null-ls
-  require("config.plugins.null-ls"),
+  -- require("config.plugins.null-ls"),
+  require("config.plugins.conform"),
   -- comment
   require("config.plugins.comment"),
   -- treesitter
