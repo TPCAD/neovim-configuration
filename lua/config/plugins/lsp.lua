@@ -23,6 +23,7 @@ return {
       "python",
       "cmake",
       "rust",
+      "asm",
     }
 
     local on_attach = require("config.utils.lsp-on-attach")
