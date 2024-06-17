@@ -12,11 +12,21 @@ return {
 }
 
 -- return {
--- 	"loctvl842/monokai-pro.nvim",
--- 	priority = 1000,
--- 	lazy = false,
--- 	config = function()
--- 		require("monokai-pro").setup()
--- 		vim.cmd.colorscheme("monokai-pro")
--- 	end,
+--   "shaunsingh/nord.nvim",
+--   priority = 1000,
+--   lazy = false,
+--   config = function()
+--     -- require("nord").setup()
+--     vim.cmd.colorscheme("nord")
+--   end,
+-- }
+
+-- return {
+--   "loctvl842/monokai-pro.nvim",
+--   priority = 1000,
+--   lazy = false,
+--   config = function()
+--     require("monokai-pro").setup()
+--     vim.cmd.colorscheme("monokai-pro")
+--   end,
 -- }
