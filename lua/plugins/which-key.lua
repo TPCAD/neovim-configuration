@@ -22,6 +22,7 @@ return {
       ["<leader>b"] = { name = "Split Window Below" },
       ["<leader>v"] = { name = "Split Window Right" },
       ["<leader>x"] = { name = "Delete Current Buffer" },
+      ["<leader>f"] = { name = "file/find" },
     })
   end,
 }
