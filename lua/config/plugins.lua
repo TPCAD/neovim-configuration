@@ -12,8 +12,4 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-  -- ui
-  require("plugins.bufferline"),
-  require("plugins.lualine"),
-})
+require("lazy").setup("plugins")
