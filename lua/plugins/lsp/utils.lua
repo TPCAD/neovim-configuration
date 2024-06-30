@@ -25,6 +25,11 @@ local on_attach = function(_, bufnr)
   nmap("n", "<leader>rn", vim.lsp.buf.rename, "Rename")
   nmap({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
   nmap("n", "gr", vim.lsp.buf.references, "Go to references")
+  -- Diagnostic keymap
+  nmap("n", "<space>e", vim.diagnostic.open_float, "Show diagnostic info")
+  nmap("n", "[d", vim.diagnostic.goto_prev, "Go to previous diagnostic")
+  nmap("n", "]d", vim.diagnostic.goto_next, "Go to next diagnostic")
+  nmap("n", "<leader>q", vim.diagnostic.setloclist, "")
 end
 
 return on_attach
