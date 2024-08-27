@@ -17,12 +17,12 @@ return {
   opts = {},
   config = function()
     local wk = require("which-key")
-    wk.register({
-      ["<leader>w"] = { name = "Which Key" },
-      ["<leader>b"] = { name = "Split Window Below" },
-      ["<leader>v"] = { name = "Split Window Right" },
-      ["<leader>x"] = { name = "Delete Current Buffer" },
-      ["<leader>f"] = { name = "file/find" },
+    wk.add({
+      { "<leader>w", group = "Which Key" },
+      { "<leader>b", group = "Split Window Below" },
+      { "<leader>v", group = "Split Window Right" },
+      { "<leader>x", group = "Delete Current Buffer" },
+      { "<leader>f", group = "file/find" },
     })
   end,
 }
