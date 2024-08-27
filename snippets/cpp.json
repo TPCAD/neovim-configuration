@@ -6,18 +6,25 @@
 		],
 		"description": "Output variable"
 	},
-	"cout-variable-without-endl": {
-		"prefix": "coutvw",
-		"body": [
-			"std::cout << ${1:var};\n$0"
-		],
-		"description": "Output variable without endl"
-	},
 	"add-endl": {
 		"prefix": "endl",
 		"body": [
 			"std::cout << std::endl;\n"
 		],
 		"description": "Output endl"
+	},
+	"multiline-comment": {
+		"prefix": "mcom",
+		"body": [
+			"/*${1}\n */\n$0"
+		],
+		"description": "Multiline comments"
+	},
+	"doc-comment": {
+		"prefix": "dcom",
+		"body": [
+			"/* ${1:desc}\n * \n * @param ${2:param} ${3:desc}\n * \n * @return ${4:return}\n */$0"
+		],
+		"description": "Document comments"
 	}
 }
