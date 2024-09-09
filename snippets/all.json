@@ -1,0 +1,23 @@
+{
+	"todo": {
+		"prefix": "todo",
+		"body": [
+			"TODO: "
+		],
+		"description": "todo comment"
+	},
+	"fix": {
+		"prefix": "fix",
+		"body": [
+			"FIX: "
+		],
+		"description": "fix comment"
+	},
+	"bug": {
+		"prefix": "bug",
+		"body": [
+			"BUG: "
+		],
+		"description": "bug comment"
+	}
+}

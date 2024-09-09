@@ -23,8 +23,9 @@
 	"doc-comment": {
 		"prefix": "dcom",
 		"body": [
-			"/* ${1:desc}\n * \n * @param ${2:param} ${3:desc}\n * \n * @return ${4:return}\n */$0"
+			"/**\n *  @brief  ${1:brief}\n *  @param  ${2:param}  ${3:desc}\n *  @return  ${4:return}\n */$0"
 		],
+
 		"description": "Document comments"
 	}
 }
