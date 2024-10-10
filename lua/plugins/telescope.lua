@@ -12,7 +12,7 @@ return {
     { "<leader>fg", ":Telescope live_grep<CR>", desc = "Live Grep" },
     { "<leader>fb", ":Telescope buffers<CR>", desc = "Buffers" },
     { "<leader>fo", ":Telescope oldfiles<CR>", desc = "Old Files" },
-    { "<leader>fa", ":Telescope diagnostics<CR>", desc = "Diagnostics" },
+    { "<leader>fc", ":Telescope grep_string<CR>", desc = "Search cursor word" },
     { "<leader>fb", ":Telescope current_buffer_fuzzy_find<CR>", desc = "Fuzzy Find in Current Buffer" },
     -- { "<leader>", ":Telescope git_branches<CR>", desc = "git_branches" },
     -- { "<leader>", ":Telescope git_bcommits<CR>", desc = "git_commits" },
