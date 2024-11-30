@@ -7,5 +7,5 @@ local function openColorschemePickerWithEvent()
   telescope.colorscheme({ enable_preview = true })
 end
 -- Set the keymap to call the function
-vim.keymap.set("n", "<leader>uc", openColorschemePickerWithEvent, { desc = "Switch Colorscheme" })
+vim.keymap.set("n", "<leader>cu", openColorschemePickerWithEvent, { desc = "Switch Colorscheme" })
 -- End lazy color scheme picker
