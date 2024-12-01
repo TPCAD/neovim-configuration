@@ -40,9 +40,13 @@ vim.keymap.set("n", "k", [[v:count ? 'k' : 'gk']], { expr = true, desc = "Move C
 vim.keymap.set("n", "<leader>x", ":bd<CR>", opts("Delete current buffer"))
 
 -- terminal
+vim.keymap.set("n", "<C-/>", function()
+  Snacks.terminal()
+end, opts("Terminal"))
 vim.keymap.set("n", "<C-_>", function()
   Snacks.terminal()
 end, opts("Terminal"))
+vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", opts("Hide Terminal"))
 vim.keymap.set("t", "<C-_>", "<cmd>close<cr>", opts("Hide Terminal"))
 -- termial mode prefix key
 vim.keymap.set("t", "<leader>jk", "<C-\\><C-n>", opts("Termial Mode Prefix Key"))
