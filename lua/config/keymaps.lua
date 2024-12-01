@@ -12,7 +12,7 @@ local function opts(description)
 end
 
 -- split window
-vim.keymap.set("n", "<leader>sh", "<C-w>s", opts("Split window horizontal"))
+vim.keymap.set("n", "<leader>sh", "<C-w>s", opts("Split window horizontally"))
 vim.keymap.set("n", "<leader>sv", "<C-w>v", opts("Split window vertically"))
 
 -- switch window
@@ -20,6 +20,12 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", opts("Switch to right window"))
 vim.keymap.set("n", "<C-j>", "<C-w>j", opts("Switch to bottom window"))
 vim.keymap.set("n", "<C-k>", "<C-w>k", opts("Switch to up window"))
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts("Switch to left window"))
+
+-- resize window
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts("Decrease current window vertically"))
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts("Increase current window vertically"))
+vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", opts("Increase current window horizontally"))
+vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", opts("Decrease current window horizontally"))
 
 -- exit insert with jk
 vim.keymap.set("i", "jk", "<esc>", opts("Exit insert mode"))
