@@ -12,8 +12,8 @@ local function opts(description)
 end
 
 -- split window
-vim.keymap.set("n", "<leader>b", "<C-w>s", opts("Split window honrizontal"))
-vim.keymap.set("n", "<leader>v", "<C-w>v", opts("Split window vertically"))
+vim.keymap.set("n", "<leader>sh", "<C-w>s", opts("Split window horizontal"))
+vim.keymap.set("n", "<leader>sv", "<C-w>v", opts("Split window vertically"))
 
 -- switch window
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts("Switch to right window"))
