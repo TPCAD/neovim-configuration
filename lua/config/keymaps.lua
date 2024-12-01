@@ -49,4 +49,4 @@ end, opts("Terminal"))
 vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", opts("Hide Terminal"))
 vim.keymap.set("t", "<C-_>", "<cmd>close<cr>", opts("Hide Terminal"))
 -- termial mode prefix key
-vim.keymap.set("t", "<leader>jk", "<C-\\><C-n>", opts("Termial Mode Prefix Key"))
+vim.keymap.set("t", "jk", "<C-\\><C-n>", opts("Termial Mode Prefix Key"))
