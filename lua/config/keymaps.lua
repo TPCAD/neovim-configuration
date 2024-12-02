@@ -22,10 +22,10 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", opts("Switch to Upper Window"))
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts("Switch to Left Window"))
 
 -- resize window
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts("Decrease Window Width"))
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts("Increase Window Width"))
-vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", opts("Increase Window Height"))
-vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", opts("Decrease Window Height"))
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<cr>", opts("Decrease Window Width"))
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<cr>", opts("Increase Window Width"))
+vim.keymap.set("n", "<C-Up>", ":resize +2<cr>", opts("Increase Window Height"))
+vim.keymap.set("n", "<C-Down>", ":resize -2<cr>", opts("Decrease Window Height"))
 
 -- exit insert with jk
 vim.keymap.set("i", "jk", "<esc>", opts("Exit Insert Mode"))
@@ -36,8 +36,14 @@ vim.keymap.set("n", "<space>", ":", opts("Enter Command Mode"))
 vim.keymap.set("n", "j", [[v:count ? 'j' : 'gj']], { expr = true, desc = "Move Cursor Down" })
 vim.keymap.set("n", "k", [[v:count ? 'k' : 'gk']], { expr = true, desc = "Move Cursor Up" })
 
--- delete buffer
-vim.keymap.set("n", "<leader>x", ":bd<CR>", opts("Delete current buffer"))
+-- buffer
+vim.keymap.set("n", "<tab>", "<cmd>bnext<cr>", opts("Next Buffer"))
+vim.keymap.set("n", "<S-tab>", "<cmd>bprevious<cr>", opts("Previous Buffer"))
+vim.keymap.set("n", "<leader>bb", "<cmd>e #<cr>", opts("Switch to Other Buffer"))
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", opts("Delete Buffer"))
+vim.keymap.set("n", "<leader>bo", function()
+  Snacks.bufdelete.other()
+end, opts("Delete Other Buffer"))
 
 -- terminal
 vim.keymap.set("n", "<C-/>", function()
