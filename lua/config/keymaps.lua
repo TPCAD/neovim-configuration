@@ -54,4 +54,4 @@ vim.keymap.set("n", "<leader>tf", function()
 end, opts("Floating Terminal"))
 
 -- termial mode prefix key
-vim.keymap.set("t", "jk", "<C-\\><C-n>", opts("Termial Mode Prefix Key"))
+-- vim.keymap.set("t", "jk", "<C-\\><C-n>", opts("Termial Mode Prefix Key"))
