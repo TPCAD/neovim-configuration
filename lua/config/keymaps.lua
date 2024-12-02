@@ -41,12 +41,17 @@ vim.keymap.set("n", "<leader>x", ":bd<CR>", opts("Delete current buffer"))
 
 -- terminal
 vim.keymap.set("n", "<C-/>", function()
-  Snacks.terminal()
+  Snacks.terminal(nil, { env = { is_bottom = "yes" } })
 end, opts("Terminal"))
 vim.keymap.set("n", "<C-_>", function()
-  Snacks.terminal()
+  Snacks.terminal(nil, { env = { is_bottom = "yes" } })
 end, opts("Terminal"))
 vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", opts("Hide Terminal"))
 vim.keymap.set("t", "<C-_>", "<cmd>close<cr>", opts("Hide Terminal"))
+
+vim.keymap.set("n", "<leader>tf", function()
+  Snacks.terminal(nil, { env = { is_float = "yes" }, win = { position = "float" } })
+end, opts("Floating Terminal"))
+
 -- termial mode prefix key
 vim.keymap.set("t", "jk", "<C-\\><C-n>", opts("Termial Mode Prefix Key"))
