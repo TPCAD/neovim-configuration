@@ -70,3 +70,9 @@ end, opts("Floating Terminal"))
 
 -- termial mode prefix key
 -- vim.keymap.set("t", "jk", "<C-\\><C-n>", opts("Termial Mode Prefix Key"))
+
+-- quit
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", opts("Quit All"))
+
+-- noh
+vim.keymap.set({ "n", "i" }, "<esc>", "<cmd>noh<cr><esc>", opts("Escape and Clear hlsearch"))
