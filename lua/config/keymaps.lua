@@ -45,6 +45,15 @@ vim.keymap.set("n", "<leader>bo", function()
   Snacks.bufdelete.other()
 end, opts("Delete Other Buffer"))
 
+-- tabs
+vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", opts("New Tab"))
+vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", opts("Close Tab"))
+vim.keymap.set("n", "<leader><tab>n", "<cmd>tabnext<cr>", opts("Next Tab"))
+vim.keymap.set("n", "<leader><tab>p", "<cmd>tabprevious<cr>", opts("Previous Tab"))
+vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", opts("Close Other Tab"))
+vim.keymap.set("n", "<leader><tab>f", "<cmd>tabfirst<cr>", opts("First Tab"))
+vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", opts("Last Tab"))
+
 -- terminal
 vim.keymap.set("n", "<C-/>", function()
   Snacks.terminal(nil, { env = { is_bottom = "yes" } })
