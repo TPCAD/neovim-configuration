@@ -71,6 +71,14 @@ end, opts("Floating Terminal"))
 -- termial mode prefix key
 -- vim.keymap.set("t", "jk", "<C-\\><C-n>", opts("Termial Mode Prefix Key"))
 
+-- lazygit
+-- TODO: check cwd is git repo
+if vim.fn.executable("lazygit") == 1 then
+  vim.keymap.set("n", "<leader>gg", function()
+    Snacks.lazygit()
+  end, opts("Lazygit"))
+end
+
 -- quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", opts("Quit All"))
 
