@@ -11,9 +11,8 @@ local function opts(description)
   }
 end
 
--- split window
-vim.keymap.set("n", "<leader>sh", "<C-w>s", opts("Split Window Horizontally"))
-vim.keymap.set("n", "<leader>sv", "<C-w>v", opts("Split Window Vertically"))
+-- windows
+vim.keymap.set("n", "<leader>w", "<C-w>", { silent = true, desc = "Windows", remap = true })
 
 -- switch window
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts("Switch to Right Window"))
@@ -53,6 +52,22 @@ vim.keymap.set("n", "<leader><tab>p", "<cmd>tabprevious<cr>", opts("Previous Tab
 vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", opts("Close Other Tab"))
 vim.keymap.set("n", "<leader><tab>f", "<cmd>tabfirst<cr>", opts("First Tab"))
 vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", opts("Last Tab"))
+
+-- diagnostic
+local diagnostic_goto = function(next, severity)
+  -- local go = next and vim.diagnostic.jump or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function()
+    vim.diagnostic.jump({ count = next, severity = severity, float = true })
+  end
+end
+vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+vim.keymap.set("n", "]d", diagnostic_goto(1), { desc = "Next Diagnostic" })
+vim.keymap.set("n", "[d", diagnostic_goto(-1), { desc = "Prev Diagnostic" })
+vim.keymap.set("n", "]e", diagnostic_goto(1, "ERROR"), { desc = "Next Error" })
+vim.keymap.set("n", "[e", diagnostic_goto(-1, "ERROR"), { desc = "Prev Error" })
+vim.keymap.set("n", "]w", diagnostic_goto(1, "WARN"), { desc = "Next Warning" })
+vim.keymap.set("n", "[w", diagnostic_goto(-1, "WARN"), { desc = "Prev Warning" })
 
 -- terminal
 vim.keymap.set("n", "<C-/>", function()
