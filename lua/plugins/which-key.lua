@@ -1,28 +1,35 @@
 return {
   "folke/which-key.nvim",
-  keys = {
-    "<leader>",
-    "'",
-    '"',
-    "`",
-    "c",
-    "v",
-    "g",
-    { "<leader>wk", ":WhichKey<CR>", desc = "Which-key All Keymaps" },
+  event = "VeryLazy",
+  opts = {
+    spec = {
+      {
+        mode = { "n", "v" },
+        { "<leader><tab>", group = "tabs" },
+        { "<leader>f", group = "file/find" },
+        { "<leader>g", group = "git" },
+        { "[", group = "prev" },
+        { "]", group = "next" },
+        { "g", group = "goto" },
+        -- { "gs", group = "surround" },
+        { "z", group = "fold" },
+        {
+          "<leader>b",
+          group = "buffer",
+          expand = function()
+            return require("which-key.extras").expand.buf()
+          end,
+        },
+      },
+    },
   },
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-  end,
-  opts = {},
-  config = function()
-    local wk = require("which-key")
-    wk.add({
-      { "<leader>w", group = "Which Key" },
-      { "<leader>b", group = "Split Window Below" },
-      { "<leader>v", group = "Split Window Right" },
-      { "<leader>x", group = "Delete Current Buffer" },
-      { "<leader>f", group = "file/find" },
-    })
-  end,
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+    },
+  },
 }
