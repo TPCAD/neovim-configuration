@@ -8,14 +8,36 @@ return {
   },
   cmd = "Telescope",
   keys = {
-    { "<leader>ff", ":Telescope find_files<CR>", desc = "Find Files" },
-    { "<leader>fg", ":Telescope live_grep<CR>", desc = "Live Grep" },
-    { "<leader>fb", ":Telescope buffers<CR>", desc = "Buffers" },
-    { "<leader>fo", ":Telescope oldfiles<CR>", desc = "Old Files" },
-    { "<leader>fc", ":Telescope grep_string<CR>", desc = "Search cursor word" },
-    { "<leader>fb", ":Telescope current_buffer_fuzzy_find<CR>", desc = "Fuzzy Find in Current Buffer" },
-    -- { "<leader>", ":Telescope git_branches<CR>", desc = "git_branches" },
-    -- { "<leader>", ":Telescope git_bcommits<CR>", desc = "git_commits" },
+    { "<leader>,", "<cmd>Telescope buffers<cr>", desc = "Switch Buffers" },
+    { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
+    { "<leader><space>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
+    -- find
+    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>fb", "<cmd>Telescope buffers ignore_current_buffer=true<cr>", desc = "Buffers" },
+    { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find Files (git-files)" },
+    { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
+    -- git
+    { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git Commits" },
+    { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Git Status" },
+    -- search
+    { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Search in Current Buffer" },
+    { "<leader>sc", "<cmd>Telescope command_history<cr>", desc = "Command History" },
+    { "<leader>sC", "<cmd>Telescope commands<cr>", desc = "Commands" },
+    { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document Diagnostics" },
+    { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace Diagnostics" },
+    { "<leader>sg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
+    { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
+    { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
+    -- { "<leader>sj", "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
+    { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
+    { "<leader>sl", "<cmd>Telescope loclist<cr>", desc = "Location List" },
+    { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
+    { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
+    { "<leader>so", "<cmd>Telescope vim_options<cr>", desc = "Options" },
+    { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "Resume" },
+    { "<leader>sq", "<cmd>Telescope quickfix<cr>", desc = "Quickfix List" },
+    { "<leader>sw", "<cmd>Telescope grep_string<cr>", desc = "Search Word under Cursor" },
   },
   config = function()
     local open_with_trouble = require("trouble.sources.telescope").open
@@ -27,7 +49,7 @@ return {
       defaults = {
         mappings = {
           i = { ["<c-t>"] = open_with_trouble },
-          n = { ["<c-t>"] = open_with_trouble },
+          n = { ["<c-t>"] = open_with_trouble, ["q"] = require("telescope.actions").close },
         },
       },
       extensions = {
