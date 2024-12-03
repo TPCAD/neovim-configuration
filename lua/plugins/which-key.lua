@@ -9,7 +9,10 @@ return {
         { "<leader>f", group = "file/find" },
         { "<leader>g", group = "git" },
         { "<leader>c", group = "code" },
+        { "<leader>cw", group = "workspace" },
+        { "<leader>q", group = "session/quit" },
         { "<leader>s", group = "search" },
+        { "<leader>t", group = "terminal" },
         { "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
         { "[", group = "prev" },
         { "]", group = "next" },
@@ -21,6 +24,14 @@ return {
           group = "buffer",
           expand = function()
             return require("which-key.extras").expand.buf()
+          end,
+        },
+        {
+          "<leader>w",
+          group = "windows",
+          proxy = "<c-w>",
+          expand = function()
+            return require("which-key.extras").expand.win()
           end,
         },
       },
