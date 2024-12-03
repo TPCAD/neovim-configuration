@@ -61,14 +61,15 @@ local diagnostic_goto = function(next, severity)
     vim.diagnostic.jump({ count = next, severity = severity, float = true })
   end
 end
-vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-vim.keymap.set("n", "]d", diagnostic_goto(1), { desc = "Next Diagnostic" })
-vim.keymap.set("n", "[d", diagnostic_goto(-1), { desc = "Prev Diagnostic" })
-vim.keymap.set("n", "]e", diagnostic_goto(1, "ERROR"), { desc = "Next Error" })
-vim.keymap.set("n", "[e", diagnostic_goto(-1, "ERROR"), { desc = "Prev Error" })
-vim.keymap.set("n", "]w", diagnostic_goto(1, "WARN"), { desc = "Next Warning" })
-vim.keymap.set("n", "[w", diagnostic_goto(-1, "WARN"), { desc = "Prev Warning" })
-
+vim.keymap.set("n", "<space>e", vim.diagnostic.open_float, opts("Line Diagnostics"))
+vim.keymap.set("n", "]d", diagnostic_goto(1), opts("Next Diagnostic"))
+vim.keymap.set("n", "[d", diagnostic_goto(-1), opts("Prev Diagnostic"))
+vim.keymap.set("n", "]e", diagnostic_goto(1, "ERROR"), opts("Next Error"))
+vim.keymap.set("n", "[e", diagnostic_goto(-1, "ERROR"), opts("Prev Error"))
+vim.keymap.set("n", "]w", diagnostic_goto(1, "WARN"), opts("Next Warning"))
+vim.keymap.set("n", "[w", diagnostic_goto(-1, "WARN"), opts("Prev Warning"))
+vim.keymap.del("n", "<C-w>d")
+vim.keymap.del("n", "<C-w><C-d>")
 -- terminal
 vim.keymap.set("n", "<C-/>", function()
   Snacks.terminal(nil, { env = { is_bottom = "yes" } })
