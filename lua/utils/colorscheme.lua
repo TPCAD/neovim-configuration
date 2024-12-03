@@ -1,6 +1,6 @@
 -- Start lazy color scheme picker
-local telescope = require("telescope.builtin")
 local function openColorschemePickerWithEvent()
+  local telescope = require("telescope.builtin")
   -- Trigger the User LazyColorscheme event
   vim.cmd("doautocmd User LazyColorscheme")
   -- Then open the colorscheme picker
