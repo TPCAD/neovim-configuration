@@ -14,14 +14,17 @@ local on_attach = function(client, bufnr)
     vim.keymap.set(modes, keys, func, { buffer = bufnr, desc = desc })
   end
 
+  local trouble = require("trouble")
   -- Buffer
   -- See `:help vim.lsp.*` for documentation on any of the below functions
+  -- stylua: ignore start
   map("n", "<leader>cl", "<cmd>LspInfo<cr>", "Lsp Info")
-  map("n", "gd", vim.lsp.buf.definition, "Goto Definition")
-  map("n", "gD", vim.lsp.buf.declaration, "Goto Declaration")
-  map("n", "gi", vim.lsp.buf.implementation, "Goto implementation")
-  map("n", "gy", vim.lsp.buf.type_definition, "Goto T[y]pe definition")
-  map("n", "gr", vim.lsp.buf.references, "Goto References")
+  map("n", "gd", function() trouble.toggle("lsp_definitions") end, "Goto Definition")
+  map("n", "gD", function () trouble.toggle("lsp_declarations") end, "Goto Declaration")
+  map("n", "gi", function () trouble.toggle("lsp_implementations") end, "Goto implementation")
+  map("n", "gr", function () trouble.toggle("lsp_references") end, "Goto References")
+  map("n", "gy", function () trouble.toggle("lsp_type_definitions") end, "Goto T[y]pe definition")
+  -- stylua: ignore start
   map("n", "K", vim.lsp.buf.hover, "Hover")
   map("n", "gK", vim.lsp.buf.signature_help, "Signature Help")
   map("n", "<leader>cr", vim.lsp.buf.rename, "Rename")
