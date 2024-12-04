@@ -1,6 +1,11 @@
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+
+  -- enable inlay hints
+  if client.server_capabilities.inlayHintProvider then
+    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+  end
 
   local map = function(modes, keys, func, desc)
     if desc then
@@ -29,11 +34,11 @@ local on_attach = function(_, bufnr)
   map("n", "<A-p>", function() Snacks.words.jump(-vim.v.count1) end, "Prev References")
   -- stylua: ignore start
   -- workspace
-  map("n", "<leader>cwa", vim.lsp.buf.add_workspace_folder, "Add workspace folder")
-  map("n", "<leader>cwr", vim.lsp.buf.remove_workspace_folder, "Remove workspace folder")
+  map("n", "<leader>cwa", vim.lsp.buf.add_workspace_folder, "Add Workspace Folder")
+  map("n", "<leader>cwr", vim.lsp.buf.remove_workspace_folder, "Remove Workspace Folder")
   map("n", "<leader>cwl", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, "List workspace folders")
+  end, "List Workspace Folders")
 end
 
 return on_attach

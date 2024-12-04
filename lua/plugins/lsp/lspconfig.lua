@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  event = "VeryLazy",
+  event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   dependencies = {
     {
       "williamboman/mason.nvim",
@@ -14,6 +14,12 @@ return {
       "williamboman/mason-lspconfig.nvim",
       event = "VeryLazy",
       config = function() end,
+    },
+  },
+  opts = {
+    -- enable inlay hints
+    inlay_hints = {
+      enabled = true,
     },
   },
   config = function()
