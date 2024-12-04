@@ -44,13 +44,14 @@ vim.keymap.set("n", "j", [[v:count ? 'j' : 'gj']], { expr = true, desc = "Move C
 vim.keymap.set("n", "k", [[v:count ? 'k' : 'gk']], { expr = true, desc = "Move Cursor Up" })
 
 -- buffer
+-- stylua: ignore start
 vim.keymap.set("n", "<tab>", "<cmd>bnext<cr>", opts("Next Buffer"))
 vim.keymap.set("n", "<S-tab>", "<cmd>bprevious<cr>", opts("Previous Buffer"))
 vim.keymap.set("n", "<leader>bb", "<cmd>e #<cr>", opts("Switch to Other Buffer"))
-vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", opts("Delete Buffer"))
-vim.keymap.set("n", "<leader>bo", function()
-  Snacks.bufdelete.other()
-end, opts("Delete Other Buffer"))
+vim.keymap.set("n", "<leader>bd", function() Snacks.bufdelete() end, opts("Delete Buffer"))
+vim.keymap.set("n", "<leader>bo", function() Snacks.bufdelete.other() end, opts("Delete Other Buffer"))
+vim.keymap.set("n", "<leader>bD", "<cmd>bd<cr>", opts("Delete Buffer and Window"))
+-- stylua: ignore end
 
 -- tabs
 vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", opts("New Tab"))
