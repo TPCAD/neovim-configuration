@@ -5,7 +5,8 @@ return {
     {
       "williamboman/mason.nvim",
       build = ":MasonUpdate", -- :MasonUpdate updates registry contents event = "VeryLazy",
-      event = "VeryLazy",
+      cmd = "Mason",
+      keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
       config = function()
         require("mason").setup()
       end,
