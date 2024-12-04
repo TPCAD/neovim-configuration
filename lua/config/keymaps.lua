@@ -11,6 +11,14 @@ local function opts(description)
   }
 end
 
+-- remvoe default keymaps of nvim
+vim.keymap.del("n", "gra")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "grn")
+vim.keymap.del("n", "gO")
+vim.keymap.del("i", "<C-s>")
+
 -- windows
 vim.keymap.set("n", "<leader>w", "<C-w>", { silent = true, desc = "Windows", remap = true })
 
