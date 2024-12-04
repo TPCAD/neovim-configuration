@@ -1,5 +1,5 @@
 vim.g.mapleader = ";"
-vim.g.localmapleader = "\\"
+vim.g.maplocalleader = "\\"
 
 -- vim.keymap.set({mode}, {lhs}, {rhs}, {opts})
 -- {opts} noremap: disable recursive mapping, desc: description of keymap
