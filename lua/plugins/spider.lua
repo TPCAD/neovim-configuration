@@ -2,19 +2,19 @@ return {
   "chrisgrieser/nvim-spider",
   keys = {
     {
-      "<leader>u",
+      "<leader>me",
       "<cmd>lua require('spider').motion('e')<CR>",
       mode = { "n", "o", "x" },
       desc = "Spider e",
     },
     {
-      "<leader>m",
+      "<leader>mw",
       "<cmd>lua require('spider').motion('w')<CR>",
       mode = { "n", "o", "x" },
       desc = "Spider w",
     },
     {
-      "<leader>i",
+      "<leader>mb",
       "<cmd>lua require('spider').motion('b')<CR>",
       mode = { "n", "o", "x" },
       desc = "Spider b",
