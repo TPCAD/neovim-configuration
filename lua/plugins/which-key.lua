@@ -10,6 +10,8 @@ return {
         { "<leader>g", group = "git" },
         { "<leader>c", group = "code" },
         { "<leader>cw", group = "workspace" },
+        { "<leader>m", group = "spider", icon = { icon = "󱇪", color = "blue" } },
+        { "<leader>n", group = "increment selection", icon = { icon = "󰒉", color = "yellow" } },
         { "<leader>q", group = "session/quit" },
         { "<leader>s", group = "search" },
         { "<leader>t", group = "terminal" },
