@@ -90,8 +90,22 @@ end, opts("Terminal"))
 vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", opts("Hide Terminal"))
 vim.keymap.set("t", "<C-_>", "<cmd>close<cr>", opts("Hide Terminal"))
 
+-- stylua: ignore
+-- local border_symbols = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
 vim.keymap.set("n", "<leader>tf", function()
-  Snacks.terminal(nil, { env = { is_float = "yes" }, win = { position = "float" } })
+  Snacks.terminal(nil, {
+    env = { is_float = "yes" },
+    win = {
+      position = "float",
+      width = 0.8,
+      height = 0.8,
+      border = "rounded",
+      backdrop = false,
+      wo = {
+        winhighlight = "Normal:Normal",
+      },
+    },
+  })
 end, opts("Floating Terminal"))
 
 -- termial mode prefix key
