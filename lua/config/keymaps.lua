@@ -38,7 +38,7 @@ vim.keymap.set("n", "<C-Down>", ":resize -2<cr>", opts("Decrease Window Height")
 -- exit insert with jk
 vim.keymap.set("i", "jk", "<esc>", opts("Exit Insert Mode"))
 -- enter command with space
-vim.keymap.set("n", "<space>", ":", opts("Enter Command Mode"))
+vim.keymap.set("n", "<space>", ":", { desc = "Enter Command Mode" })
 
 -- move cursor up and down more intelligent
 vim.keymap.set("n", "j", [[v:count ? 'j' : 'gj']], { expr = true, desc = "Move Cursor Down" })
