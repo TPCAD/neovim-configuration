@@ -13,6 +13,15 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    keys = {
+      {
+        "<leader>snn",
+        function()
+          Snacks.notifier.show_history()
+        end,
+        desc = "Show Snacks Notifications",
+      },
+    },
     opts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
