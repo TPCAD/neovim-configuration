@@ -13,6 +13,34 @@
 		],
 		"description": "Output endl"
 	},
+	"println-variable": {
+		"prefix": "prlnv",
+		"body": [
+			"std::println(\"{}\", ${1:var});\n$0"
+		],
+		"description": "print variable with new line"
+	},
+	"print-variable": {
+		"prefix": "prtv",
+		"body": [
+			"std::print(\"{}\", ${1:var});\n$0"
+		],
+		"description": "print variable without new line"
+	},
+	"println-pointer": {
+		"prefix": "prtptr",
+		"body": [
+			"std::println(\"{:p}\", static_cast<void *>(${1:var}));\n$0"
+		],
+		"description": "print pointer with new line"
+	},
+	"println-string": {
+		"prefix": "prlnw",
+		"body": [
+			"std::println(\"$1\");\n$0"
+		],
+		"description": "print string with new line"
+	},
 	"multiline-comment": {
 		"prefix": "mcom",
 		"body": [
