@@ -8,6 +8,15 @@ local M = {
     end,
   },
 
+  bash = {
+    setup = function(lspconfig, capabilities, on_attach)
+      lspconfig.bashls.setup({
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+    end,
+  },
+
   c = {
     setup = function(lspconfig, capabilities, on_attach)
       lspconfig.clangd.setup({
