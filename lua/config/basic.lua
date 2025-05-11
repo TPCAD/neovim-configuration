@@ -24,6 +24,13 @@ vim.opt.listchars:append("space:⋅")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- indent
+opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.smartindent = true
+
 -- native code fold in nvim with nvim-treesitter
 -- opt.foldmethod = "expr"
 -- opt.foldexpr = "nvim_treesitter#foldexpr()"
