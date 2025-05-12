@@ -41,6 +41,11 @@ return {
           },
         },
       },
+      styles = {
+        notification_history = {
+          width = 0.8,
+        },
+      },
     },
   },
 }
