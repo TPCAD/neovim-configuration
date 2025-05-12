@@ -1,5 +1,6 @@
 return {
   "folke/noice.nvim",
+  -- enabled = false,
   event = "VeryLazy",
   -- stylua: ignore start
   keys = {
@@ -33,6 +34,14 @@ return {
       {
         filter = {
           event = "msg_show",
+          kind = "shell_out",
+        },
+        opts = {enter = true},
+        view = "popup",
+      },
+      {
+        filter = {
+          event = "msg_show",
           any = {
             { find = "%d+L, %d+B" },
             { find = "; after #%d+" },
@@ -43,6 +52,17 @@ return {
       },
     },
     views = {
+      popup = {
+        win_options = {
+          winhighlight = {
+            Normal = "Normal",
+          },
+        },
+        size = {
+          width = "80%",
+          height = "auto"
+        }
+      },
       hover = {
         win_options = {
           winhighlight = {
