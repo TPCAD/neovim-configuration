@@ -8,7 +8,8 @@ return {
   opts = {
     keymap = {
       preset = "default",
-      ["<C-y>"] = { "show", "show_documentation", "hide_documentation" },
+      ["<C-o>"] = { "show", "hide" },
+      ["<C-y>"] = { "show_documentation", "hide_documentation" },
       ["<enter>"] = { "select_and_accept", "fallback" },
       ["<C-n>"] = { "select_next", "snippet_forward", "fallback_to_mappings" },
       ["<C-p>"] = { "select_prev", "snippet_backward", "fallback_to_mappings" },
