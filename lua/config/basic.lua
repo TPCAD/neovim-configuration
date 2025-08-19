@@ -5,7 +5,7 @@ opt.relativenumber = true -- relative line number
 
 opt.mouse = "a" -- enable mouse
 
-opt.clipboard = "unnamed" -- sync with system clipboard
+opt.clipboard = "unnamedplus" -- sync with system clipboard
 
 opt.colorcolumn = "80" -- highlight 80th column
 
