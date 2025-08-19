@@ -1,0 +1,18 @@
+{
+  "lambda-expression":
+      {
+        "prefix": "lambda",
+        "body": [
+          "|${1:_}| { $2 }$0"
+        ],
+        "description": "Lambda expression"
+      },
+  "print-variable":
+      {
+        "prefix": "pvar",
+        "body": [
+          "println!(\"{:?}\", ${1:var});\n$0"
+        ],
+        "description": "Print variable with new line"
+      }
+}
