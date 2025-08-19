@@ -2,7 +2,7 @@ vim.lsp.enable("asm_lsp")
 vim.lsp.enable("bashls")
 vim.lsp.enable("clangd")
 vim.lsp.enable("lua_ls")
-vim.lsp.enable("rust_analyzer")
+-- vim.lsp.enable("rust_analyzer")
 
 vim.lsp.config("*", {
   capabilities = {
