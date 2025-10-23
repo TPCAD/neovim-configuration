@@ -1,0 +1,18 @@
+{
+  "register":
+      {
+        "prefix": "reg",
+        "body": [
+          "%${1:reg}$0"
+        ],
+        "description": "Register"
+      },
+  "variable":
+      {
+        "prefix": "var",
+        "body": [
+          "\\$${1:var}$0"
+        ],
+        "description": "Variable"
+      }
+}

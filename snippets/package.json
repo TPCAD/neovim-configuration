@@ -1,40 +1,46 @@
 {
-    "name": "friendly-snippets",
-    "engines": {
-        "vscode": "^1.11.0"
-    },
-    "contributes": {
-        "snippets": [
-            {
-                "language": [
-                    "all"
-                ],
-                "path": "./all.json"
-            },
-            {
-                "language": [
-                    "rust"
-                ],
-                "path": "./rust.json"
-            },
-            {
-                "language": [
-                    "lua"
-                ],
-                "path": "./lua.json"
-            },
-            {
-                "language": [
-                    "cpp"
-                ],
-                "path": "./cpp.json"
-            },
-            {
-                "language": [
-                    "c"
-                ],
-                "path": "./c.json"
-            }
-        ]
-    }
+  "name": "friendly-snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "all"
+        ],
+        "path": "./all.json"
+      },
+      {
+        "language": [
+          "rust"
+        ],
+        "path": "./rust.json"
+      },
+      {
+        "language": [
+          "lua"
+        ],
+        "path": "./lua.json"
+      },
+      {
+        "language": [
+          "cpp"
+        ],
+        "path": "./cpp.json"
+      },
+      {
+        "language": [
+          "c"
+        ],
+        "path": "./c.json"
+      },
+      {
+        "language": [
+          "asm"
+        ],
+        "path": "./asm.json"
+      }
+    ]
+  }
 }
