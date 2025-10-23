@@ -49,18 +49,18 @@ return {
       enabled = true,
       keymap = {
         preset = "inherit",
-        ["<C-n>"] = { "select_next", "snippet_forward", "fallback_to_mappings" },
-        -- ["<CR>"] = { "accept_and_enter", "fallback" },
+        ["<C-n>"] = { "show_and_insert", "select_next", "snippet_forward", "fallback_to_mappings" },
+        ["<CR>"] = { "accept_and_enter", "fallback" },
       },
-      completion = {
-        menu = { auto_show = true },
-        list = {
-          selection = {
-            preselect = false,
-            auto_insert = true,
-          },
-        },
-      },
+      -- completion = {
+      --   menu = { auto_show = true },
+      --   list = {
+      --     selection = {
+      --       preselect = false,
+      --       auto_insert = true,
+      --     },
+      --   },
+      -- },
     },
     sources = {
       providers = {
