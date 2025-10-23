@@ -29,7 +29,7 @@ return {
             -- width = "auto",
             -- height = "auto",
             max_height = 10,
-            max_width = 110,
+            max_width = 100,
           },
           win_options = {
             winhighlight = {
