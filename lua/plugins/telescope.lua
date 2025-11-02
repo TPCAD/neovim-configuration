@@ -2,6 +2,7 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
+    enabled = false,
     branch = "0.1.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -68,6 +69,7 @@ return {
   -- better vim.ui with telescope
   {
     "stevearc/dressing.nvim",
+    enabled = false,
     lazy = true,
     init = function()
       ---@diagnostic disable-next-line: duplicate-set-field

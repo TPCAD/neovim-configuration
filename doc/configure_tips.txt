@@ -1,0 +1,27 @@
+*configure_tips.txt*
+*configtips* *conftips*
+--------------------------------------------------------------------------------
+CONTENTS                                               *configure-tips-contents*
+
+1. lazy.nvim                                                |confgure-tips-lazy|
+
+--------------------------------------------------------------------------------
+
+lazy.nvim                                   *confgure-tips-lazy* *conftips-lazy*
+
+lazy opts and config                 *conftips-lazy-opts* *conftips-lazy-config*
+
+`opts` must be a table or a function return a table which will be used to setup
+plugin.
+
+`config` is a function without return. Use `opts` instead of `config`.
+
+lazy VeryLazy                                                *conftips-VeryLazy*
+
+`VeryLazy` may be the best choice in most cases. For example, bufferline.nvim
+takes 5 ms with `BufRead`, 2~3 ms with 'VeryLazy'.
+
+
+
+================================================================================
+vim:tw=80:ts=2:ft=help:norl:syntax=help:

@@ -8,19 +8,12 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   end,
 })
 
--- ignore case when type ":" to enter command mode
-local cmdline_smartcase = vim.api.nvim_create_augroup("cmdline_smartcase", { clear = true })
-
-vim.api.nvim_create_autocmd({ "CmdlineEnter" }, {
-  pattern = ":",
-  group = cmdline_smartcase,
-  command = "set ignorecase",
-})
-
-vim.api.nvim_create_autocmd({ "CmdlineLeave" }, {
-  pattern = ":",
-  group = cmdline_smartcase,
-  command = "set noignorecase",
+-- restore cursor position(for new buffer, not buffer already exists)
+vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+  pattern = { "*" },
+  callback = function()
+    vim.api.nvim_exec2('silent! normal! g`"zv', { output = false })
+  end,
 })
 
 -- close some filetypes with <q>

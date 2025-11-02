@@ -12,4 +12,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", { dev = { path = "~/Projects", patters = "*.nvim" } })
+
+vim.keymap.set("n", "<leader>la", "<cmd>Lazy<cr>", { desc = "Lazy" })
