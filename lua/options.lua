@@ -35,7 +35,7 @@ vim.opt.listchars:append("space:⋅")
 vim.opt.number = true -- line number
 vim.opt.relativenumber = true -- relative line number
 
-vim.opt.colorcolumn = "80" -- highlight 80th column
+-- vim.opt.colorcolumn = "80" -- highlight 80th column
 
 vim.opt.breakindent = true -- indent for wrapped line
 

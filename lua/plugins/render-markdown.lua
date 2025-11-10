@@ -1,7 +1,7 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
   dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
-  -- ft = { "markdown" },
+  ft = { "markdown" },
   keys = {
     {
       "<leader>tm",
@@ -9,21 +9,10 @@ return {
       function()
         require("render-markdown").buf_toggle()
       end,
-      desc = "Toggle markdown render",
+      desc = "Toggle Buf Markdown Render",
     },
   },
-  ---@module 'render-markdown'
-  ---@type render.md.UserConfig
-  opts = {
-    heading = {
-      icons = {
-        "󰼏  ",
-        "󰎨  ",
-        "󰼑  ",
-        "󰎲  ",
-        "󰼓 ",
-        "󰎴 ",
-      },
-    },
-  },
+  opts = function()
+    return require("config.markdown")
+  end,
 }
