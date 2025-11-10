@@ -40,6 +40,12 @@
           "asm"
         ],
         "path": "./asm.json"
+      },
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./markdown.json"
       }
     ]
   }
