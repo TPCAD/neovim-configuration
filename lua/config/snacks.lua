@@ -28,10 +28,6 @@ map("<leader>fg", Snacks.picker.git_files, "Git Files")
 map("<leader>fr", Snacks.picker.recent, "Recent Files")
 map("<leader>fh", Snacks.picker.help, "Help Files")
 
--- git
-map("<leader>gl", Snacks.picker.git_log, "Git Log(Commit)")
-map("<leader>gs", Snacks.picker.git_status, "Git Status")
-
 -- search
 map("<leader>sb", Snacks.picker.lines, "Buffer Lines")
 map("<leader>sB", Snacks.picker.grep_buffers, "Grep Open Buffers")
@@ -84,30 +80,7 @@ vim.keymap.set("n", "<leader>lt", function()
   })
 end, { desc = "Floating Terminal" })
 
--- terminal
-vim.keymap.set("n", "<C-/>", function()
-  Snacks.terminal(nil, { env = { is_bottom = "yes" } })
-end, { desc = "Terminal" })
-vim.keymap.set("n", "<C-_>", function()
-  Snacks.terminal(nil, { env = { is_bottom = "yes" } })
-end, { desc = "Terminal" })
-vim.keymap.set("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
-vim.keymap.set("t", "<C-_>", "<cmd>close<cr>", { desc = "Hide Terminal" })
-
--- Terminal Mappings
-local function term_nav(dir)
-  ---@param self snacks.terminal
-  return function(self)
-    return self:is_floating() and "<c-" .. dir .. ">" or vim.schedule(function()
-      vim.cmd.wincmd(dir)
-    end)
-  end
-end
-
 return {
-  -- your configuration comes here
-  -- or leave it empty to use the default settings
-  -- refer to the configuration section below
   bigfile = { enabled = true },
   notifier = { enabled = true },
   quickfile = { enabled = true },
@@ -115,16 +88,6 @@ return {
   words = { enabled = true },
   picker = { enabled = true },
   input = { enabled = true },
-  terminal = {
-    win = {
-      keys = {
-        nav_h = { "<C-h>", term_nav("h"), desc = "Go to Left Window", expr = true, mode = "t" },
-        nav_j = { "<C-j>", term_nav("j"), desc = "Go to Lower Window", expr = true, mode = "t" },
-        nav_k = { "<C-k>", term_nav("k"), desc = "Go to Upper Window", expr = true, mode = "t" },
-        nav_l = { "<C-l>", term_nav("l"), desc = "Go to Right Window", expr = true, mode = "t" },
-      },
-    },
-  },
   styles = {
     notification_history = {
       width = 0.8,
