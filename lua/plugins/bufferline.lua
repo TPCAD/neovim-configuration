@@ -1,5 +1,6 @@
 return {
   "akinsho/bufferline.nvim",
+  enabled = false,
   version = "*",
   event = "VeryLazy",
   keys = {
@@ -24,6 +25,7 @@ return {
       options = {
         separator_style = "slope", -- slant, slope, thick, thin, { ">", "<" }
         always_show_bufferline = false,
+        auto_toggle_bufferline = false,
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(_, level, _, context)
           if context.buffer:current() then
