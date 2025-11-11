@@ -76,8 +76,13 @@ vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close Other 
 vim.keymap.set("n", "<leader><tab>f", "<cmd>tabfirst<cr>", { desc = "First Tab" })
 vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
 
--- termial mode to normal mode
-vim.keymap.set("t", "jk", "<C-\\><C-n>", { desc = "Termial Mode Prefix Key" })
+vim.keymap.set("n", "<leader>tC", function()
+  if #vim.opt.colorcolumn:get() == 0 then
+    vim.opt.colorcolumn:prepend("80")
+  else
+    vim.opt.colorcolumn:remove("80")
+  end
+end, { desc = "Toggle Color Column" })
 
 -- quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
