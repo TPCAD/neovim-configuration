@@ -3,6 +3,15 @@ return {
     "mfussenegger/nvim-dap",
     dependencies = {
       "rcarriga/nvim-dap-ui",
+      {
+        "jbyuki/one-small-step-for-vimkind",
+        ft = "lua",
+        config = function()
+          vim.keymap.set("n", "<leader>dl", function()
+            require("osv").launch({ port = 8086, frozen_delay = 100 })
+          end, { noremap = true, desc = "DAP: Launch Nvim Debugger" })
+        end,
+      },
     },
     lazy = true,
     config = function()

@@ -83,4 +83,18 @@ map("n", "<leader>dD", dap.clear_breakpoints, "Clear Breakpoints")
 
 -- vim.keymap.set("n", "<leader>dr", dap.restart_frame, { desc = "DAP: Restart frame" })
 
+if vim.bo.filetype == "lua" then
+  return {
+    layouts = {
+      {
+        position = "bottom",
+        size = 0.4,
+        elements = {
+          { id = "scopes", size = 1 },
+        },
+      },
+    },
+  }
+end
+
 return {}
