@@ -6,6 +6,7 @@ return {
       {
         mode = { "n", "x" },
         { "<leader><tab>", group = "tabs" },
+        { "<leader>e", group = "file explorer", icon = "" },
         { "<leader>f", group = "file/find" },
         { "<leader>g", group = "git" },
         { "<leader>c", group = "code" },
