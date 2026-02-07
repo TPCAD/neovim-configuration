@@ -14,5 +14,13 @@
           "\\$${1:var}$0"
         ],
         "description": "Variable"
+      },
+  "bochs breakpoint":
+      {
+        "prefix": "xbb",
+        "body": [
+          "xchgw %bx, %bx$0"
+        ],
+        "description": "Bochs breakpoint"
       }
 }

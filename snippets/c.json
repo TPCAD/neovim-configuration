@@ -1,17 +1,38 @@
 {
-	"multiline-comment": {
-		"prefix": "mcom",
-		"body": [
-			"/*${1}\n */\n$0"
-		],
-		"description": "Multiline comments"
-	},
-	"doc-comment": {
-		"prefix": "dcom",
-		"body": [
-			"/**\n *  @brief  ${1:brief}\n *  @param  ${2:param}  ${3:desc}\n *  @return  ${4:return}\n */$0"
-		],
+  "multiline-comment": {
+    "prefix": "mcom",
+    "body": [
+      "/*${1}\n */\n$0"
+    ],
+    "description": "Multiline comments"
+  },
+  "doc-comment": {
+    "prefix": "dcom",
+    "body": [
+      "/**\n *  @brief  ${1:brief}\n *  @param  ${2:param}  ${3:desc}\n *  @return  ${4:return}\n */$0"
+    ],
 
-		"description": "Document comments"
-	}
+    "description": "Document comments"
+  },
+  "macro": {
+    "prefix": "def",
+    "body": [
+      "#define $0"
+    ],
+    "description": "Define macro"
+  },
+  "include global header": {
+    "prefix": "incg",
+    "body": [
+      "#include <${1:header}>$0"
+    ],
+    "description": "Include global header"
+  },
+  "include local header": {
+    "prefix": "incl",
+    "body": [
+      "#include \"${1:header}\"$0"
+    ],
+    "description": "Include local header"
+  }
 }

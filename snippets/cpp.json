@@ -1,59 +1,81 @@
 {
-	"cout-variable": {
-		"prefix": "coutv",
-		"body": [
-			"std::cout << ${1:var} << std::endl;\n$0"
-		],
-		"description": "Output variable"
-	},
-	"add-endl": {
-		"prefix": "endl",
-		"body": [
-			"std::cout << std::endl;\n"
-		],
-		"description": "Output endl"
-	},
-	"println-variable": {
-		"prefix": "prlnv",
-		"body": [
-			"std::println(\"{}\", ${1:var});\n$0"
-		],
-		"description": "print variable with new line"
-	},
-	"print-variable": {
-		"prefix": "prtv",
-		"body": [
-			"std::print(\"{}\", ${1:var});\n$0"
-		],
-		"description": "print variable without new line"
-	},
-	"println-pointer": {
-		"prefix": "prtptr",
-		"body": [
-			"std::println(\"{:p}\", static_cast<void *>(${1:var}));\n$0"
-		],
-		"description": "print pointer with new line"
-	},
-	"println-string": {
-		"prefix": "prlnw",
-		"body": [
-			"std::println(\"$1\");\n$0"
-		],
-		"description": "print string with new line"
-	},
-	"multiline-comment": {
-		"prefix": "mcom",
-		"body": [
-			"/*${1}\n */\n$0"
-		],
-		"description": "Multiline comments"
-	},
-	"doc-comment": {
-		"prefix": "dcom",
-		"body": [
-			"/**\n *  @brief  ${1:brief}\n *  @param  ${2:param}  ${3:desc}\n *  @return  ${4:return}\n */$0"
-		],
+  "cout-variable": {
+    "prefix": "coutv",
+    "body": [
+      "std::cout << ${1:var} << std::endl;\n$0"
+    ],
+    "description": "Output variable"
+  },
+  "add-endl": {
+    "prefix": "endl",
+    "body": [
+      "std::cout << std::endl;\n"
+    ],
+    "description": "Output endl"
+  },
+  "println-variable": {
+    "prefix": "prlnv",
+    "body": [
+      "std::println(\"{}\", ${1:var});\n$0"
+    ],
+    "description": "print variable with new line"
+  },
+  "print-variable": {
+    "prefix": "prtv",
+    "body": [
+      "std::print(\"{}\", ${1:var});\n$0"
+    ],
+    "description": "print variable without new line"
+  },
+  "println-pointer": {
+    "prefix": "prtptr",
+    "body": [
+      "std::println(\"{:p}\", static_cast<void *>(${1:var}));\n$0"
+    ],
+    "description": "print pointer with new line"
+  },
+  "println-string": {
+    "prefix": "prlnw",
+    "body": [
+      "std::println(\"$1\");\n$0"
+    ],
+    "description": "print string with new line"
+  },
+  "multiline-comment": {
+    "prefix": "mcom",
+    "body": [
+      "/*${1}\n */\n$0"
+    ],
+    "description": "Multiline comments"
+  },
+  "doc-comment": {
+    "prefix": "dcom",
+    "body": [
+      "/**\n *  @brief  ${1:brief}\n *  @param  ${2:param}  ${3:desc}\n *  @return  ${4:return}\n */$0"
+    ],
 
-		"description": "Document comments"
-	}
+    "description": "Document comments"
+  },
+  "macro": {
+    "prefix": "def",
+    "body": [
+      "#define $0"
+    ],
+
+    "description": "Define macro"
+  },
+  "include global header": {
+    "prefix": "incg",
+    "body": [
+      "#include <${1:header}>$0"
+    ],
+    "description": "Include global header"
+  },
+  "include local header": {
+    "prefix": "incl",
+    "body": [
+      "#include \"${1:header}\"$0"
+    ],
+    "description": "Include local header"
+  }
 }
