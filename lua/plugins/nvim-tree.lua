@@ -3,7 +3,7 @@ return {
   "nvim-tree/nvim-tree.lua",
   cmd = { "NvimTreeOpen", "NvimTreeToggle" },
   keys = {
-    { "<leader>et", "<cmd>NvimTreeToggle<CR>", "n", desc = "File Explorer" },
+    { "<leader>ee", "<cmd>NvimTreeToggle<CR>", "n", desc = "File Explorer" },
   },
   opts = {
     hijack_unnamed_buffer_when_opening = true,
