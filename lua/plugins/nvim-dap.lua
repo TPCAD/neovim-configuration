@@ -13,6 +13,7 @@ return {
         end,
       },
     },
+    cond = not vim.g.vscode,
     lazy = true,
     config = function()
       require("config.debugger")

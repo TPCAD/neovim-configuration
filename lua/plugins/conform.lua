@@ -1,6 +1,7 @@
 return {
   "stevearc/conform.nvim",
   dependencies = { "williamboman/mason.nvim" },
+  cond = not vim.g.vscode,
   -- the mappings would be set no matter conform.nvim is loaded
   init = function()
     vim.g.disable_autoformat = false

@@ -1,6 +1,7 @@
 return {
   -- file explorer
   "nvim-tree/nvim-tree.lua",
+  cond = not vim.g.vscode,
   cmd = { "NvimTreeOpen", "NvimTreeToggle" },
   keys = {
     { "<leader>ee", "<cmd>NvimTreeToggle<CR>", "n", desc = "File Explorer" },

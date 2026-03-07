@@ -2,6 +2,7 @@ return {
   "folke/noice.nvim",
   -- enabled = false,
   event = "VeryLazy",
+  cond = not vim.g.vscode,
   opts = {
     cmdline = { enabled = true },
     messages = { enabled = false },
