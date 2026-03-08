@@ -13,6 +13,9 @@ return {
   },
   settings = {
     Lua = {
+      runtime = {
+        pathStrict = false,
+      },
       completion = {
         callSnippet = "Replace",
       },
