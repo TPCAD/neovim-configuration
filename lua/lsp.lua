@@ -1,5 +1,6 @@
 vim.lsp.enable("asm_lsp")
 vim.lsp.enable("bashls")
+vim.lsp.enable("basedpyright")
 -- vim.lsp.enable("rust_analyzer")
 
 vim.api.nvim_create_autocmd("LspAttach", {
