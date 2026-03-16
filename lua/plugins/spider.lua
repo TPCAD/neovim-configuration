@@ -1,41 +1,9 @@
-return {
-  "chrisgrieser/nvim-spider",
-  keys = {
-    {
-      "<leader>me",
-      "<cmd>lua require('spider').motion('e')<CR>",
-      mode = { "n", "o", "x" },
-      desc = "Spider e",
-    },
-    -- {
-    --   "<leader>me",
-    --   "e",
-    --   mode = { "n", "o", "x" },
-    --   desc = "Normal e",
-    -- },
-    {
-      "<leader>mw",
-      "<cmd>lua require('spider').motion('w')<CR>",
-      mode = { "n", "o", "x" },
-      desc = "Spider w",
-    },
-    -- {
-    --   "<leader>mw",
-    --   "w",
-    --   mode = { "n", "o", "x" },
-    --   desc = "Normal w",
-    -- },
-    {
-      "<leader>mb",
-      "<cmd>lua require('spider').motion('b')<CR>",
-      mode = { "n", "o", "x" },
-      desc = "Spider b",
-    },
-    -- {
-    --   "<leader>mb",
-    --   "b",
-    --   mode = { "n", "o", "x" },
-    --   desc = "Normal b",
-    -- },
-  },
-}
+local lz = require("utils").lazyload
+
+vim.pack.add({
+  { src = lz.gh_link("chrisgrieser/nvim-spider") },
+})
+
+lz.by_keys("spider", { "n", "o", "x" }, "<leader>me", "lua require('spider').motion('e')", { desc = "Spider e" })
+lz.by_keys("spider", { "n", "o", "x" }, "<leader>mw", "lua require('spider').motion('w')", { desc = "Spider w" })
+lz.by_keys("spider", { "n", "o", "x" }, "<leader>mb", "lua require('spider').motion('b')", { desc = "Spider b" })

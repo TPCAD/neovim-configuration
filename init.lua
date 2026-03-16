@@ -4,10 +4,8 @@ if not vim.g.vscode then
   require("options")
   require("keymaps")
   require("lsp")
-  require("pluginmanager")
+  require("plugins")
   require("config.terminal")
 else
   require("vscodeonly")
-  require("pluginmanager")
 end
-

@@ -1,9 +1,9 @@
-return {
-  "williamboman/mason.nvim",
-  event = { "BufReadPost", "BufWritePost", "BufNewFile", "VimEnter" },
-  cond = not vim.g.vscode,
-  build = ":MasonUpdate", -- :MasonUpdate updates registry contents event = "VeryLazy",
-  cmd = "Mason",
-  keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
-  opts = {},
-}
+local lz = require("utils").lazyload
+
+vim.pack.add({
+  { src = lz.gh_link("williamboman/mason.nvim") },
+})
+
+lz.by_events("mason", { "BufReadPost", "BufWritePost", "BufNewFile", "VimEnter" }, "SetupMason")
+
+vim.keymap.set("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Mason" })

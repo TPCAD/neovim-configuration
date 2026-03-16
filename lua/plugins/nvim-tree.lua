@@ -1,20 +1,17 @@
-return {
-  -- file explorer
-  "nvim-tree/nvim-tree.lua",
-  cond = not vim.g.vscode,
-  cmd = { "NvimTreeOpen", "NvimTreeToggle" },
-  keys = {
-    { "<leader>ee", "<cmd>NvimTreeToggle<CR>", "n", desc = "File Explorer" },
+local lz = require("utils").lazyload
+
+vim.pack.add({
+  { src = lz.gh_link("nvim-tree/nvim-tree.lua") },
+})
+
+lz.by_keys("nvim-tree", "n", "<leader>ee", "NvimTreeToggle", { desc = "File Explorer" }, {
+  hijack_unnamed_buffer_when_opening = true,
+  disable_netrw = true,
+  hijack_cursor = true,
+  diagnostics = {
+    enable = true,
   },
-  opts = {
-    hijack_unnamed_buffer_when_opening = true,
-    disable_netrw = true,
-    hijack_cursor = true,
-    diagnostics = {
-      enable = true,
-    },
-    update_focused_file = {
-      enable = true,
-    },
+  update_focused_file = {
+    enable = true,
   },
-}
+})

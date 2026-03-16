@@ -1,25 +1,15 @@
-return {
-  "mfussenegger/nvim-lint",
-  event = {
-    "BufReadPre",
-    "BufNewFile",
-  },
-  cond = not vim.g.vscode,
-  config = function()
-    local lint = require("lint")
+vim.pack.add({
+  { src = "https://github.com/mfussenegger/nvim-lint" },
+})
 
-    lint.linters_by_ft = {
-      -- markdown = { "markdownlint" },
-      sh = { "shellcheck" },
-    }
-
-    local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
-    vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-      group = lint_augroup,
-      callback = function()
-        lint.try_lint()
-      end,
-    })
-  end,
+require("lint").linters_by_ft = {
+  sh = { "shellcheck" },
 }
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+  group = vim.api.nvim_create_augroup("TryLint", { clear = true }),
+  once = true,
+  callback = function()
+    require("lint").try_lint()
+  end,
+})

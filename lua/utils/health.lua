@@ -5,7 +5,7 @@ local check_version = function()
     return
   end
 
-  if vim.version.ge(vim.version(), "0.11") then
+  if vim.version.ge(vim.version(), "0.12") then
     vim.health.ok(string.format("Neovim version is: '%s'", verstr))
   else
     vim.health.error(string.format("Neovim out of date: '%s'. Neovim 0.11+ is needed", verstr))
@@ -16,7 +16,7 @@ return {
   check = function()
     vim.health.start("Custom")
 
-    vim.health.info([[Neovim 0.11+ is needed.]])
+    vim.health.info([[Neovim 0.12+ is needed.]])
 
     local uv = vim.uv or vim.loop
     vim.health.info("System Information: " .. vim.inspect(uv.os_uname()))

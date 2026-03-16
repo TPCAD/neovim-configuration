@@ -1,8 +1,7 @@
-return {
-  "windwp/nvim-autopairs",
-  event = "VeryLazy",
-  cond = not vim.g.vscode,
-  config = function()
-    require("nvim-autopairs").setup({})
-  end,
-}
+local lz = require("utils").lazyload
+
+vim.pack.add({
+  { src = lz.gh_link("windwp/nvim-autopairs") },
+})
+
+lz.by_events("nvim-autopairs", "InsertEnter", "SetupAutopairs")
