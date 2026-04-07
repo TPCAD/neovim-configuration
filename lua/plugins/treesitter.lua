@@ -1,10 +1,11 @@
 local lz = require("utils").lazyload
 
+-- nvim-treesitter doesn't support lazy load
 vim.pack.add({
   { src = lz.gh_link("nvim-treesitter/nvim-treesitter") },
 })
 
-lz.by_events("nvim-treesitter", "BufRead", "SetupTreesitter", {
+require("nvim-treesitter").setup({
   ensure_installed = {
     "bash",
     "c",
@@ -15,7 +16,7 @@ lz.by_events("nvim-treesitter", "BufRead", "SetupTreesitter", {
     "vim",
     "vimdoc",
   },
-  auto_install = false,
+  auto_install = true,
   highlight = {
     enable = true,
   },
