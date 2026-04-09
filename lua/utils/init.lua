@@ -19,4 +19,32 @@ M.safe_require = function(mod, silent)
   return nil
 end
 
+
+---check is WSL
+---@return boolean
+local function is_wsl()
+  local uv = vim.uv or vim.loop
+  return uv.fs_stat("/bin/wslinfo") ~= nil
+end
+
+---@type boolean
+M.is_wsl = is_wsl()
+
+---check system clipboard
+---@return string
+local function check_clipboard()
+  if vim.fn.executable("win32yank.exe") == 1 then
+    return "win32yank"
+  elseif vim.fn.executable("xclip") == 1 then
+    return "xclip"
+  elseif vim.fn.executable("wl-copy") == 1 then
+    return "wl-copy"
+  else
+    return ""
+  end
+end
+
+---@type string
+M.clipboard = check_clipboard()
+
 return M
