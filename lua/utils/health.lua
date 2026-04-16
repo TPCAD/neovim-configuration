@@ -24,9 +24,7 @@ local check_clipboard = function()
     return
   end
 
-  if utils.is_wsl and utils.clipboard ~= "win32yank" then
-    vim.health.warn(string.format("Found %s", utils.clipboard), [[It's recommanded to use win32yank in WSL]])
-  end
+  vim.health.ok(string.format("Found %s", utils.clipboard))
 end
 
 local function check_wsl()

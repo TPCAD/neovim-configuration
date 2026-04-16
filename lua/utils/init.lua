@@ -33,9 +33,7 @@ M.is_wsl = is_wsl()
 ---check system clipboard
 ---@return string
 local function check_clipboard()
-  if vim.fn.executable("win32yank.exe") == 1 then
-    return "win32yank"
-  elseif vim.fn.executable("xclip") == 1 then
+  if vim.fn.executable("xclip") == 1 then
     return "xclip"
   elseif vim.fn.executable("wl-copy") == 1 then
     return "wl-copy"
