@@ -116,6 +116,9 @@ require("dap-view").setup({
   },
   virtual_text = {
     enabled = true,
+    format = function(variable, _, _)
+      return ": " .. variable.value
+    end,
   },
 })
 
