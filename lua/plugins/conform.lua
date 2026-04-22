@@ -52,6 +52,7 @@ lz.by_events("conform", { "BufWrite", "InsertEnter" }, "SetupConform", {
     sh = { "shfmt" },
     json = { "clang_format" },
     toml = { "taplo" },
+    python = { "black" },
   },
   format_after_save = function(bufnr)
     if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
