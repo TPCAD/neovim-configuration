@@ -46,6 +46,8 @@ local opts = {
   },
   sources = {
     providers = {
+      -- show snippets preferentially
+      snippets = { score_offset = 1000 },
       cmdline = {
         min_keyword_length = function(ctx)
           -- when typing a command, only show when the keyword is 3 characters or longer
