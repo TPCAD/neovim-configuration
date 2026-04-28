@@ -1,0 +1,29 @@
+{
+  "main":
+      {
+        "prefix": "main",
+        "body": [
+          "if __name__ == \"__main__\":",
+          "    ${1:pass}$0"
+        ],
+        "description": "main"
+      },
+  "init-method":
+      {
+        "prefix": "init",
+        "body": [
+          "def __init__(self) -> None:",
+          "    pass"
+        ],
+        "description": "init method"
+      },
+  "method":
+      {
+        "prefix": "method",
+        "body": [
+          "def ${1:method_name}(self) -> ${2:None}:",
+          "    ${3:pass}"
+        ]
+      }
+
+}
