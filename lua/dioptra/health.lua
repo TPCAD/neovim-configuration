@@ -45,7 +45,6 @@ return {
     local uv = vim.uv or vim.loop
     vim.health.info("System Info: " .. vim.inspect(uv.os_uname()))
 
-
     vim.health.start("Dioptra.Clipboard")
     check_clipboard()
   end,
