@@ -53,11 +53,3 @@ vim.opt.smartindent = true
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
-require("config.folding")
-
--- native code fold in nvim with nvim-treesitter
--- opt.foldmethod = "expr"
--- opt.foldexpr = "nvim_treesitter#foldexpr()"
--- opt.foldenable = false
--- opt.foldlevel = 99

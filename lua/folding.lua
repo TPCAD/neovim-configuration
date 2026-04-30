@@ -40,6 +40,7 @@ local function fold_virt_text(result, start_text, lnum)
   end
   table.insert(result, { text, hl })
 end
+
 function _G.custom_foldtext()
   local start_text = vim.fn.getline(vim.v.foldstart):gsub("\t", string.rep(" ", vim.o.tabstop))
   local nline = vim.v.foldend - vim.v.foldstart
@@ -53,5 +54,6 @@ function _G.custom_foldtext()
   table.insert(result, { "󰛁  " .. nline .. " lines folded", "@comment" })
   return result
 end
+
 vim.opt.foldtext = "v:lua.custom_foldtext()"
 vim.keymap.set("n", "<CR>", "za", { desc = "Toggle fold under cursor" })

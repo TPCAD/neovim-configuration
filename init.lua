@@ -7,6 +7,7 @@ vim.g.clipboard = utils.clipboard
 if not vim.g.vscode then
   require("autocmd")
   require("options")
+  require("folding")
   require("keymaps")
   require("lsp")
   require("plugins")
