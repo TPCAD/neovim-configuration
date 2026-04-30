@@ -10,7 +10,7 @@ if not vim.g.vscode then
   require("keymaps")
   require("lsp")
   require("plugins")
-  require("config.terminal")
+  require("dioptra.terminal")
   require("config.ensure_installed")
 else
   require("vscodeonly")
