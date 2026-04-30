@@ -1,6 +1,9 @@
 ---@type integer
 vim.g.term_bufnr = 0
 
+---@type string
+vim.g.alt_buf = ""
+
 local toggle_terminal_buffer = function()
   -- delete existing terminal when first open nvim
   if vim.g.term_bufnr == 0 then
@@ -12,20 +15,28 @@ local toggle_terminal_buffer = function()
     end
   end
 
-  -- switch to alternate buf if terminal buffer is normal mode
+  -- switch to alternate buf if current buffer is terminal buffer
   if vim.g.term_bufnr == vim.api.nvim_win_get_buf(0) then
     vim.cmd("b#")
+    vim.fn.setreg("#", vim.g.alt_buf)
     return
   end
 
   -- switch to terminal buffer if exist
   if vim.g.term_bufnr ~= 0 and vim.api.nvim_buf_is_valid(vim.g.term_bufnr) then
+    vim.g.alt_buf = vim.fn.getreg("#")
     vim.api.nvim_win_set_buf(0, vim.g.term_bufnr)
     vim.cmd("startinsert")
     return
   end
 
   -- create a terminal buffer if not exist
+  -- save the alternate buf before enter terminal buffer
+  vim.g.alt_buf = vim.fn.getreg("#")
+  if string.find(vim.g.alt_buf, "^term://.*") or vim.g.alt_buf == "" then
+    vim.g.alt_buf = vim.fn.bufname("%")
+  end
+
   vim.cmd.term()
   vim.cmd("startinsert")
 
