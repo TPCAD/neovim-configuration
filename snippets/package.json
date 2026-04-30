@@ -52,7 +52,7 @@
           "python"
         ],
         "path": "./python.json"
-      },
+      }
     ]
   }
 }
