@@ -12,6 +12,6 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = { "rust", "cpp", "c", "python" },
   once = true,
   callback = function()
-    require("config.debugging")
+    require("plugins.config.debugging")
   end,
 })
