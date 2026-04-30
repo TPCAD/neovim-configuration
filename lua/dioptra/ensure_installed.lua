@@ -27,7 +27,7 @@ local ensure_installed = {
   },
 }
 
-vim.api.nvim_create_user_command("DioptraInstall", function(_)
+vim.api.nvim_create_user_command("EusureInstalled", function(_)
   local packages = {}
   local languages = {}
 

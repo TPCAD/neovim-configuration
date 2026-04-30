@@ -12,7 +12,7 @@ if not vim.g.vscode then
   require("lsp")
   require("plugins")
   require("dioptra.terminal")
-  require("config.ensure_installed")
+  require("dioptra.ensure_installed")
 else
   require("vscodeonly")
 end
