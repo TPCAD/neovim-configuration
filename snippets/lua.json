@@ -41,6 +41,20 @@
     ],
     "description": "lazy load plugin by events"
   },
+  "lazy-load-plugin-by-filetypes": {
+    "prefix": "filetypes-lazy",
+    "body": [
+      "vim.api.nvim_create_autocmd(\"FileType\", {",
+      "  group = vim.api.nvim_create_augroup(\"${1:group}\", { clear = true }),",
+      "  pattern = ${2:pattern},",
+      "  once = true,",
+      "  callback = function()",
+      "    require(\"${3:module}\").setup(${4:opts})",
+      "  end,",
+      "})$0"
+    ],
+    "description": "lazy load plugin by filetypes"
+  },
   "github": {
     "prefix": "ghurl",
     "body": [
