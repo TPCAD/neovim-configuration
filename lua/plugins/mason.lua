@@ -1,9 +1,7 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("williamboman/mason.nvim") },
+  { src = "https://github.com/williamboman/mason.nvim" },
 })
 
-lz.by_events("mason", { "BufReadPost", "BufWritePost", "BufNewFile", "VimEnter" }, "SetupMason")
+require("mason").setup()
 
 vim.keymap.set("n", "<leader>cm", "<cmd>Mason<cr>", { desc = "Mason" })

@@ -1,7 +1,5 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("lewis6991/gitsigns.nvim") },
+  { src = "https://github.com/lewis6991/gitsigns.nvim" },
 })
 
 local opts = {
@@ -69,4 +67,10 @@ local opts = {
   end,
 }
 
-lz.by_events("gitsigns", "BufReadPost", "SetupGitsigns", opts)
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = vim.api.nvim_create_augroup("SetupGitsigns", { clear = true }),
+  once = true,
+  callback = function()
+    require("gitsigns").setup(opts)
+  end,
+})

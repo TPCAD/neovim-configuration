@@ -1,7 +1,29 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("stevearc/conform.nvim") },
+  { src = "https://github.com/stevearc/conform.nvim" },
+})
+
+vim.api.nvim_create_autocmd({ "BufWrite", "InsertEnter" }, {
+  group = vim.api.nvim_create_augroup("SetupConform", { clear = true }),
+  once = true,
+  callback = function()
+    require("conform").setup({
+      notify_on_error = true,
+      formatters_by_ft = {
+        c = { "clang_format" },
+        lua = { "stylua" },
+        sh = { "shfmt" },
+        json = { "clang_format" },
+        toml = { "taplo" },
+        python = { "black" },
+      },
+      format_after_save = function(bufnr)
+        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+          return
+        end
+        return { timeout_ms = 5000, lsp_format = "fallback" }
+      end,
+    })
+  end,
 })
 
 -- keymaps to toggle autoformatting
@@ -43,21 +65,3 @@ vim.keymap.set(
   ':lua require("conform").format({ async = true, lsp_fallback = true })<cr>',
   { desc = "Format Buffer/Selection" }
 )
-
-lz.by_events("conform", { "BufWrite", "InsertEnter" }, "SetupConform", {
-  notify_on_error = true,
-  formatters_by_ft = {
-    c = { "clang_format" },
-    lua = { "stylua" },
-    sh = { "shfmt" },
-    json = { "clang_format" },
-    toml = { "taplo" },
-    python = { "black" },
-  },
-  format_after_save = function(bufnr)
-    if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-      return
-    end
-    return { timeout_ms = 5000, lsp_format = "fallback" }
-  end,
-})

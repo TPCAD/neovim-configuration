@@ -1,9 +1,18 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("chrisgrieser/nvim-spider") },
+  { src = "https://github.com/chrisgrieser/nvim-spider" },
 })
 
-lz.by_keys("spider", { "n", "o", "x" }, "<leader>me", "lua require('spider').motion('e')", { desc = "Spider e" })
-lz.by_keys("spider", { "n", "o", "x" }, "<leader>mw", "lua require('spider').motion('w')", { desc = "Spider w" })
-lz.by_keys("spider", { "n", "o", "x" }, "<leader>mb", "lua require('spider').motion('b')", { desc = "Spider b" })
+vim.keymap.set({ "n", "o", "x" }, "<leader>me", function()
+  require("utils").safe_setup("spider")
+  require("spider").motion("e")
+end, { desc = "Spider e" })
+
+vim.keymap.set({ "n", "o", "x" }, "<leader>mw", function()
+  require("utils").safe_setup("spider")
+  require("spider").motion("w")
+end, { desc = "Spider w" })
+
+vim.keymap.set({ "n", "o", "x" }, "<leader>mb", function()
+  require("utils").safe_setup("spider")
+  require("spider").motion("b")
+end, { desc = "Spider b" })

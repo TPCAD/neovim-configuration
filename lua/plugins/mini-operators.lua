@@ -1,11 +1,15 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("nvim-mini/mini.operators") },
+  { src = "https://github.com/nvim-mini/mini.operators" },
 })
 
-lz.by_events("mini.operators", "BufReadPost", "SetupMiniOperators", {
-  replace = {
-    prefix = "",
-  },
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = vim.api.nvim_create_augroup("SetupMiniOperators", { clear = true }),
+  once = true,
+  callback = function()
+    require("mini.operators").setup({
+      replace = {
+        prefix = "",
+      },
+    })
+  end,
 })

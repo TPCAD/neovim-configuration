@@ -1,10 +1,8 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("mfussenegger/nvim-dap") },
-  { src = lz.gh_link("igorlfs/nvim-dap-view") },
-  { src = lz.gh_link("jbyuki/one-small-step-for-vimkind") },
-  { src = lz.gh_link("mfussenegger/nvim-dap-python") },
+  { src = "https://github.com/mfussenegger/nvim-dap" },
+  { src = "https://github.com/linkigorlfs/nvim-dap-view" },
+  { src = "https://github.com/linkjbyuki/one-small-step-for-vimkind" },
+  { src = "https://github.com/linkmfussenegger/nvim-dap-python" },
 })
 
 vim.api.nvim_create_autocmd("FileType", {

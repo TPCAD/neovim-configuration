@@ -1,23 +1,27 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("folke/persistence.nvim") },
+  { src = "https://github.com/folke/persistence.nvim" },
 })
 
-lz.by_events("persistence", "BufReadPre", "SetupPersistence")
+vim.keymap.set("n", "<leader>qs", function()
+  require("utils").safe_setup("persistence")
 
-lz.by_keys("persistence", "n", "<leader>qs", function()
   require("persistence").load()
 end, { desc = "Restore Session" })
 
-lz.by_keys("persistence", "n", "<leader>qS", function()
+vim.keymap.set("n", "<leader>qS", function()
+  require("utils").safe_setup("persistence")
+
   require("persistence").select()
 end, { desc = "Select Session" })
 
-lz.by_keys("persistence", "n", "<leader>ql", function()
+vim.keymap.set("n", "<leader>ql", function()
+  require("utils").safe_setup("persistence")
+
   require("persistence").load({ last = true })
 end, { desc = "Restore Last Session" })
 
-lz.by_keys("persistence", "n", "<leader>qd", function()
+vim.keymap.set("n", "<leader>qd", function()
+  require("utils").safe_setup("persistence")
+
   require("persistence").stop()
 end, { desc = "Don't Save Current Session" })

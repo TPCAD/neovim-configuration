@@ -1,7 +1,11 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("lukas-reineke/indent-blankline.nvim") },
+  { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
 })
 
-lz.by_events("ibl", "BufReadPost", "SetupIndentBlankline")
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = vim.api.nvim_create_augroup("SetupIndentBlankline", { clear = true }),
+  once = true,
+  callback = function()
+    require("ibl").setup()
+  end,
+})

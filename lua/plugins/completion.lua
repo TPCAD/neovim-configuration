@@ -1,7 +1,5 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("saghen/blink.cmp"), version = vim.version.range("1.*") },
+  { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.*") },
 })
 
 local opts = {
@@ -47,7 +45,12 @@ local opts = {
   sources = {
     providers = {
       -- show snippets preferentially
-      snippets = { score_offset = 1000 },
+      snippets = {
+        score_offset = 1000,
+        should_show_items = function(ctx) -- avoid triggering snippets after . " ' chars.
+          return ctx.trigger.initial_kind ~= "trigger_character"
+        end,
+      },
       cmdline = {
         min_keyword_length = function(ctx)
           -- when typing a command, only show when the keyword is 3 characters or longer
@@ -61,4 +64,10 @@ local opts = {
   },
 }
 
-lz.by_events("blink.cmp", { "BufReadPost", "BufNewFile" }, "SetupCompletion", opts)
+vim.api.nvim_create_autocmd({ "InsertEnter", "CmdlineEnter" }, {
+  group = vim.api.nvim_create_augroup("SetupCompletion", { clear = true }),
+  once = true,
+  callback = function()
+    require("blink.cmp").setup(opts)
+  end,
+})

@@ -1,9 +1,15 @@
-local lz = require("utils").lazyload
+-- nvim has builtin commenting after 0.10, see `:h commenting`
+-- the builting commenting only support line commenting
+-- it seems enough for me now :p
 
-vim.pack.add({
-  {
-    src = lz.gh_link("numToStr/Comment.nvim"),
-  },
-})
-
-lz.by_events("Comment", { "BufReadPost", "BufWritePost", "BufNewFile" }, "SetupComment")
+-- vim.pack.add({
+--   { src = "https://github.com/numToStr/Comment.nvim" },
+-- })
+--
+-- vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "BufNewFile" }, {
+--   group = vim.api.nvim_create_augroup("SetupComment", { clear = true }),
+--   once = true,
+--   callback = function()
+--     require("Comment").setup()
+--   end,
+-- })

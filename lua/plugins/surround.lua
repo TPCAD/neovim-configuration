@@ -1,7 +1,11 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("kylechui/nvim-surround"), version = vim.version.range("^4.0.0") },
+  { src = "https://github.com/kylechui/nvim-surround", version = vim.version.range("^4.0.0") },
 })
 
-lz.by_events("nvim-surround", "BufReadPost", "SetupSurround")
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = vim.api.nvim_create_augroup("SetupSurround", { clear = true }),
+  once = true,
+  callback = function()
+    require("nvim-surround").setup()
+  end,
+})

@@ -1,18 +1,22 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("folke/flash.nvim") },
+  { src = "https://github.com/folke/flash.nvim" },
 })
 
-lz.by_events("flash", { "BufReadPost", "BufNewFile" }, "SetupFlash", {
-  jump = {
-    autojump = true,
-  },
-  modes = {
-    char = {
-      keys = { "f", "F", "t", "T", ";", "," },
-    },
-  },
+vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+  group = vim.api.nvim_create_augroup("SetupFlash", { clear = true }),
+  once = true,
+  callback = function()
+    require("flash").setup({
+      jump = {
+        autojump = true,
+      },
+      modes = {
+        char = {
+          keys = { "f", "F", "t", "T", ";", "," },
+        },
+      },
+    })
+  end,
 })
 
 vim.keymap.set({ "n", "x", "o" }, "s", function()

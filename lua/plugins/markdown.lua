@@ -18,10 +18,9 @@
 --   end,
 -- }
 
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("MeanderingProgrammer/render-markdown.nvim") },
+  { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
+  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 })
 
 local opts = {

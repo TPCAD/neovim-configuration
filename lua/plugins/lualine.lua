@@ -5,7 +5,7 @@ vim.pack.add({
   { src = lz.gh_link("nvim-tree/nvim-web-devicons") },
 })
 
-lz.by_events("lualine", "BufEnter", "SetupLualine", {
+lz.by_events("lualine", "BufReadPre", "SetupLualine", {
   sections = {
     lualine_c = { "filename" },
     lualine_x = { "lsp_status", "encoding", "fileformat", "filetype" },

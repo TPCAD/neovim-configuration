@@ -1,9 +1,10 @@
-local lz = require("utils").lazyload
-
 vim.pack.add({
-  { src = lz.gh_link("stevearc/oil.nvim") },
+  { src = "https://github.com/stevearc/oil.nvim" },
 })
 
-require("oil").setup()
-
-vim.keymap.set("n", "<leader>eo", "<cmd>Oil<CR>", { desc = "Open Oil" })
+vim.keymap.set("n", "<leader>eo", function()
+  if not package.loaded["oil"] then
+    require("oil").setup()
+  end
+  vim.cmd("Oil")
+end, { desc = "Open Oil" })
