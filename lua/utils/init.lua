@@ -19,6 +19,13 @@ M.safe_require = function(mod, silent)
   return nil
 end
 
+---@param mod string Module name
+---@param opts? table Plugin setup options
+M.safe_setup = function(mod, opts)
+  if not package.loaded[mod] then
+    require(mod).setup(opts)
+  end
+end
 
 ---check is WSL
 ---@return boolean
