@@ -1,22 +1,51 @@
 {
-	"return-multiple-table": {
-		"prefix": "retm",
-		"body": [
-			"local M = {}\n",
-			"M.${1:tableName} = {\n",
-			"${2:content}\n",
-			"}\n",
-			"return M\n$0"
-		],
-		"description": "Create and return multiple table"
-	},
-	"return-single-table": {
-		"prefix": "ret",
-		"body": [
-			"return {\n",
-			"${1:content}\n",
-			"}\n$0"
-		],
-		"description": "Create and return a table"
-	}
+  "return-multiple-table": {
+    "prefix": "retm",
+    "body": [
+      "local M = {}\n",
+      "M.${1:tableName} = {\n",
+      "${2:content}\n",
+      "}\n",
+      "return M\n$0"
+    ],
+    "description": "Create and return multiple table"
+  },
+  "return-single-table": {
+    "prefix": "ret",
+    "body": [
+      "return {\n",
+      "${1:content}\n",
+      "}\n$0"
+    ],
+    "description": "Create and return a table"
+  },
+  "pack-add": {
+    "prefix": "packadd",
+    "body": [
+      "vim.pack.add({",
+      "  { src = \"https://github.com/${1:suffix}\" },",
+      "})$0"
+    ],
+    "description": "add plugin with vim.pack"
+  },
+  "lazy-load-plugin-by-events": {
+    "prefix": "events-lazy",
+    "body": [
+      "vim.api.nvim_create_autocmd(${1:events}, {",
+      "  group = vim.api.nvim_create_augroup(\"${2:group}\", { clear = true }),",
+      "  once = true,",
+      "  callback = function()",
+      "    require(\"${3:module}\").setup(${4:opts})",
+      "  end,",
+      "})$0"
+    ],
+    "description": "lazy load plugin by events"
+  },
+  "github": {
+    "prefix": "ghurl",
+    "body": [
+      "https://github.com/${1:link}$0"
+    ],
+    "description": "prefix of github url"
+  }
 }
