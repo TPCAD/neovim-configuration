@@ -1,5 +1,7 @@
 require("plugins.catppuccin")
-require("plugins.lualine")
+require("plugins.mini-icons")
+require("plugins.heirline")
+-- require("plugins.lualine")
 require("plugins.indent-blankline")
 require("plugins.autopairs")
 require("plugins.lazydev")
