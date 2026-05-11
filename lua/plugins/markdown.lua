@@ -20,7 +20,7 @@
 
 vim.pack.add({
   { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
-  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
+  -- { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 })
 
 local opts = {
@@ -53,6 +53,7 @@ local opts = {
   },
 }
 
+-- lazy load by filetypes has no effect
 require("render-markdown").setup(opts)
 
 -- lz.by_filetypes("render-markdown", "SetupRenderMarkdown", "markdown", opts)
