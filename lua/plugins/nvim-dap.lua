@@ -1,8 +1,8 @@
 vim.pack.add({
   { src = "https://github.com/mfussenegger/nvim-dap" },
-  { src = "https://github.com/linkigorlfs/nvim-dap-view" },
-  { src = "https://github.com/linkjbyuki/one-small-step-for-vimkind" },
-  { src = "https://github.com/linkmfussenegger/nvim-dap-python" },
+  { src = "https://github.com/igorlfs/nvim-dap-view" },
+  { src = "https://github.com/jbyuki/one-small-step-for-vimkind" },
+  { src = "https://github.com/mfussenegger/nvim-dap-python" },
 })
 
 vim.api.nvim_create_autocmd("FileType", {
