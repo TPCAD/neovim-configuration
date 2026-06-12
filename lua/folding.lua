@@ -56,4 +56,4 @@ function _G.custom_foldtext()
 end
 
 vim.opt.foldtext = "v:lua.custom_foldtext()"
-vim.keymap.set("n", "<CR>", "za", { desc = "Toggle fold under cursor" })
+-- vim.keymap.set("n", "<CR>", "za", { desc = "Toggle fold under cursor" })
