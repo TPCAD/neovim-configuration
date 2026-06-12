@@ -8,7 +8,7 @@ require("snacks").setup({
   quickfile = { enabled = true },
   statuscolumn = { enabled = true },
   words = { enabled = true },
-  picker = { enabled = true },
+  picker = { enabled = true, layout = "ivy_split" },
   input = { enabled = true },
   styles = {
     notification_history = {
