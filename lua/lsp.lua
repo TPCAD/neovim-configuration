@@ -1,9 +1,9 @@
 vim.lsp.enable("asm_lsp")
 vim.lsp.enable("bashls")
-vim.lsp.enable("basedpyright")
+-- vim.lsp.enable("basedpyright")
+vim.lsp.enable("ty")
 vim.lsp.enable("clangd")
 vim.lsp.enable("lua_ls")
--- vim.lsp.enable("rust_analyzer")
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("lsp-attch", { clear = true }),
