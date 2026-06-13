@@ -24,6 +24,13 @@
           "def ${1:method_name}(self) -> ${2:None}:",
           "    ${3:pass}"
         ]
+      },
+  "func":
+      {
+        "prefix": "func",
+        "body": [
+          "def ${1:func_name}() -> ${2:None}:",
+          "    ${3:pass}"
+        ]
       }
-
 }
