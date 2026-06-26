@@ -484,5 +484,29 @@
     ],
     "body": "> [!CAUTION]\n> ",
     "description": "Insert Caution"
+  },
+  "Insert Math": {
+    "prefix": "math",
+    "body": [
+      "\\$ ${1:math} \\$ ${0}"
+    ],
+    "description": "Insert Math"
+  },
+  "Insert Math Block": {
+    "prefix": "mathblock",
+    "body": [
+      "\\$\\$",
+      "${1:math}",
+      "\\$\\$",
+      "${0}"
+    ],
+    "description": "Insert Math Block"
+  },
+  "Insert Matrix": {
+    "prefix": "matrix",
+    "body": [
+      "\\bm{${1:matrix}}${0}"
+    ],
+    "description": "Insert Matrix"
   }
 }
