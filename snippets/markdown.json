@@ -508,5 +508,19 @@
       "\\bm{${1:matrix}}${0}"
     ],
     "description": "Insert Matrix"
+  },
+  "Event A": {
+    "prefix": "eventA",
+    "body": [
+      "\\$ A \\$ ${0}"
+    ],
+    "description": "Event A"
+  },
+  "Event B": {
+    "prefix": "eventB",
+    "body": [
+      "\\$ B \\$ ${0}"
+    ],
+    "description": "Event B"
   }
 }
