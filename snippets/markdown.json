@@ -509,6 +509,15 @@
     ],
     "description": "Insert Matrix"
   },
+  "Bracket Matrix Environment": {
+    "prefix": "bmatrix",
+    "body": [
+      "\\begin{bmatrix}",
+      "  ${1:e1} & ${2:e2}",
+      "\\end{bmatrix}"
+    ],
+    "description": "Insert Bracket Matrix Environment"
+  },
   "Event A": {
     "prefix": "eventA",
     "body": [
@@ -522,5 +531,12 @@
       "\\$ B \\$ ${0}"
     ],
     "description": "Event B"
+  },
+  "Partial": {
+    "prefix": "partial",
+    "body": [
+      "\\frac{\\partial{${1:up}}}{\\partial{${2:bt}}}"
+    ],
+    "description": "Insert Partial"
   }
 }
